@@ -72,6 +72,9 @@ ENV NEXT_PUBLIC_PORTAL_URL="http://localhost:3002"
 # Generate Prisma client with dummy DATABASE_URL using npx instead of bunx
 RUN cd packages/db && DATABASE_URL="postgresql://dummy:dummy@dummy:5432/dummy" npx prisma generate
 
+# Force regenerate Prisma client to ensure types are updated
+RUN cd packages/db && rm -rf node_modules/.prisma && DATABASE_URL="postgresql://dummy:dummy@dummy:5432/dummy" npx prisma generate
+
 # Add standalone output to next.config
 RUN cd apps/app && \
     cp next.config.ts next.config.ts.bak && \
@@ -80,7 +83,8 @@ RUN cd apps/app && \
 # Build the app (disable turbopack for compatibility)
 RUN cd apps/app && \
     sed -i 's/"build": "next build --turbopack"/"build": "next build"/' package.json && \
-    bun run build
+    bun run build && \
+    bun add -d ts-node
 
 # Production stage
 FROM base AS runner
@@ -89,9 +93,17 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Install runtime dependencies
+# Install runtime dependencies and Node.js
 RUN apt update && apt install -y \
     openssl \
+    curl \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js for runtime tools
+ARG NODE_VERSION=20
+RUN curl -fsSL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
+    && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user
@@ -103,12 +115,30 @@ COPY --from=builder --chown=nextjs:nodejs /app/apps/app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/app/.next/static ./apps/app/.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/apps/app/public ./apps/app/public
 
-# Copy Prisma files
+# Copy Prisma files and seed data
 COPY --from=builder --chown=nextjs:nodejs /app/packages/db/prisma ./packages/db/prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/prisma ./node_modules/prisma
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@types ./node_modules/@types
 
-USER nextjs
+# Copy package files and tsconfig for seeding
+COPY --from=builder --chown=nextjs:nodejs /app/packages/db/package.json ./packages/db/package.json
+COPY --from=builder --chown=nextjs:nodejs /app/packages/db/tsconfig.json ./packages/db/tsconfig.json
+COPY --from=builder --chown=nextjs:nodejs /app/packages/tsconfig ./packages/tsconfig
+COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/tsconfig.json ./tsconfig.json
+
+# Copy required dependencies for seeding (zod and other needed modules)
+COPY --from=builder --chown=nextjs:nodejs /app/node_modules/zod ./node_modules/zod
+
+# Install ts-node and required dependencies for seeding
+RUN npm install -g tsx
+
+# Create a wrapper script for seeding that ensures proper module resolution
+RUN echo '#!/bin/bash\ncd /app/packages/db && DATABASE_URL="$DATABASE_URL" npx prisma db seed' > /app/seed.sh && chmod +x /app/seed.sh
+
+USER root
 
 EXPOSE 3000
 

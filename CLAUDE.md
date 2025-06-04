@@ -240,3 +240,12 @@ The "frameworks" feature in this compliance application is a comprehensive syste
   RUT field won't be processed since the better-auth library doesn't support custom fields. To fully support RUT
   for all invitation types, you would need to implement a custom invitation system that stores the RUT temporarily
    and associates it when the user accepts the invitation.
+
+   # Database
+
+   ## Migrations
+
+   ```
+  cd packages/db && bunx prisma migrate deploy
+
+  ```
