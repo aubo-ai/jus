@@ -91,7 +91,7 @@ export default async function Page({
 					<div className="flex w-full flex-col relative">
 						<Balancer>
 							<h1 className="font-medium text-3xl pb-1">
-								Get Started with Comp AI
+								{t("auth.get_started")}
 							</h1>
 							<h2 className="font-medium text-xl pb-1">
 								{t("auth.title")}
@@ -112,7 +112,7 @@ export default async function Page({
 										className="border-0"
 									>
 										<AccordionTrigger className="justify-center space-x-2 flex text-sm">
-											<span>More options</span>
+											<span>{t("auth.options")}</span>
 										</AccordionTrigger>
 										<AccordionContent className="mt-4">
 											<div className="flex flex-col space-y-4">
@@ -125,20 +125,19 @@ export default async function Page({
 						</div>
 
 						<p className="text-xs text-muted-foreground">
-							By clicking continue, you acknowledge that you have
-							read and agree to the{" "}
+							{t("auth.terms")}{" "}
 							<a
 								href="https://trycomp.ai/terms-and-conditions"
 								className="underline"
 							>
-								Terms and Conditions
+								{t("auth.terms_and_conditions")}
 							</a>{" "}
-							and{" "}
+							{t("auth.and")}{" "}
 							<a
 								href="https://trycomp.ai/privacy-policy"
 								className="underline"
 							>
-								Privacy Policy
+								{t("auth.privacy_policy")}
 							</a>
 							.
 						</p>

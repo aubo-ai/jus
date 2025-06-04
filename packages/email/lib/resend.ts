@@ -36,7 +36,7 @@ export const sendEmail = async ({
 					: "JUS <hola@jus.cl>",
 			to: test ? "hola@jus.cl" : to,
 			cc,
-			replyTo: marketing ? "lewis@trycomp.ai" : undefined,
+			replyTo: marketing ? "hola@jus.cl" : undefined,
 			subject,
 			//@ts-ignore expected
 			react,

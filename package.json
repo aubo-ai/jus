@@ -32,11 +32,13 @@
 		"@semantic-release/github": "^11.0.2",
 		"@semantic-release/npm": "^12.0.1",
 		"@semantic-release/release-notes-generator": "^14.0.3",
+		"@types/bun": "^1.2.15",
 		"@types/lodash": "^4.17.16",
 		"concurrently": "^9.1.2",
 		"husky": "^9.1.7",
 		"semantic-release": "^24.2.3",
 		"semantic-release-discord": "^1.2.0",
+		"ts-node": "^10.9.2",
 		"turbo": "^2.5.3",
 		"typescript": "5.8.3"
 	},
