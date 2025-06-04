@@ -111,7 +111,7 @@ export function FrameworkCard({
 	const statusBadge = getStatusBadge(complianceScore);
 
 	// Calculate last activity date - use current date as fallback
-	const lastActivityDate = new Date().toLocaleDateString();
+	const lastActivityDate = new Date().toISOString().slice(0, 10);
 
 	return (
 		<Link

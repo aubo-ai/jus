@@ -1,25 +1,15 @@
 "use client";
 
-import { isPolicyCompleted } from "@/app/[locale]/(app)/(dashboard)/[orgId]/lib/utils/control-compliance";
 import { DataTable } from "@/components/data-table/data-table";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
-import { DataTableSortList } from "@/components/data-table/data-table-sort-list";
-import { StatusIndicator } from "@/components/status-indicator";
 import { useDataTable } from "@/hooks/use-data-table";
 import { useI18n } from "@/locales/client";
-import type { Control, Policy, Task } from "@comp/db/types";
+import type { Control, Task } from "@comp/db/types";
 import { Input } from "@comp/ui/input";
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@comp/ui/tooltip";
 import { ColumnDef } from "@tanstack/react-table";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { getControlStatus } from "../../../../../lib/utils";
 
 interface RequirementControlsTableProps {
 	controls: (Control)[];

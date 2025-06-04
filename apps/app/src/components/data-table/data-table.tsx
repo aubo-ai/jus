@@ -13,13 +13,12 @@ import {
 	TableRow,
 } from "@comp/ui/table";
 import { DataTablePagination } from "./data-table-pagination";
-import { DataTableSortList } from "./data-table-sort-list";
 
 interface DataTableProps<TData> extends React.ComponentProps<"div"> {
 	table: TanstackTable<TData>;
 	actionBar?: React.ReactNode;
 	getRowId?: (row: TData) => string;
-	rowClickBasePath: string;
+	rowClickBasePath?: string;
 	tableId?: string;
 }
 
@@ -61,10 +60,11 @@ export function DataTable<TData>({
 										key={header.id}
 										colSpan={header.colSpan}
 										className={cn(
+											"px-4",
 											index !== 0 &&
-												"hidden md:table-cell",
+											"hidden md:table-cell",
 											index === 0 &&
-												"max-w-[200px] md:max-w-none",
+											"max-w-[200px] md:max-w-none",
 										)}
 										style={{
 											...getCommonPinningStyles({
@@ -75,16 +75,16 @@ export function DataTable<TData>({
 										{header.isPlaceholder
 											? null
 											: flexRender(
-													header.column.columnDef
-														.header,
-													header.getContext(),
-												)}
+												header.column.columnDef
+													.header,
+												header.getContext(),
+											)}
 									</TableHead>
 								))}
 							</TableRow>
 						))}
 					</TableHeader>
-					<TableBody className="[&_tr]:cursor-pointer">
+					<TableBody className={cn(getRowId && "hover:[&_tr]:cursor-pointer", "select-none")}>
 						{filteredRows.length ? (
 							filteredRows.map((row) => (
 								<TableRow
@@ -101,10 +101,11 @@ export function DataTable<TData>({
 											<TableCell
 												key={cell.id}
 												className={cn(
+													"px-4",
 													index !== 0 &&
-														"hidden md:table-cell",
+													"hidden md:table-cell",
 													index === 0 &&
-														"max-w-[200px] truncate md:max-w-none md:whitespace-normal [&_td]:hover:bg-accent/50",
+													"max-w-[200px] truncate md:max-w-none md:whitespace-normal [&_td]:hover:bg-accent/50",
 												)}
 												style={{
 													...getCommonPinningStyles({

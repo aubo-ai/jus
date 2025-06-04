@@ -17,7 +17,9 @@ export const columns = (orgId: string): ColumnDef<RiskRow>[] => [
 		cell: ({ row }) => {
 			return (
 				<Link href={`/${orgId}/risk/${row.original.id}`}>
-					{row.original.title}
+					<span className="capitalize line-clamp-1">
+						{row.original.title}
+					</span>
 				</Link>
 			);
 		},
@@ -26,6 +28,9 @@ export const columns = (orgId: string): ColumnDef<RiskRow>[] => [
 			placeholder: "Search for a risk...",
 			variant: "text",
 		},
+		size: 250,
+		minSize: 200,
+		maxSize: 300,
 		enableColumnFilter: true,
 		enableSorting: true,
 	},

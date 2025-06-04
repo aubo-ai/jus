@@ -13,16 +13,9 @@ import { z } from "zod";
 import { validateRut } from "@/lib/rut-validation";
 
 export const organizationSchema = z.object({
-	name: z.string().min(1, "Organization name is required"),
 	frameworkIds: z
 		.array(z.string())
 		.min(1, "Please select at least one framework to get started with"),
-	website: z
-		.string()
-		.url({
-			message: "Please enter a valid website that starts with https://",
-		})
-		.max(255, "Website cannot exceed 255 characters"),
 });
 
 export type OrganizationSchema = z.infer<typeof organizationSchema>;
@@ -241,15 +234,15 @@ export const updateResidualRiskEnumSchema = z.object({
 
 // Policies
 export const createPolicySchema = z.object({
-       title: z
-               .string({ required_error: "Title is required" })
-               .min(1, "Title is required"),
-       description: z
-               .string({ required_error: "Description is required" })
-               .min(1, "Description is required"),
-       frameworkIds: z.array(z.string()).optional(),
-       controlIds: z.array(z.string()).optional(),
-       entityId: z.string().optional(),
+	title: z
+		.string({ required_error: "Title is required" })
+		.min(1, "Title is required"),
+	description: z
+		.string({ required_error: "Description is required" })
+		.min(1, "Description is required"),
+	frameworkIds: z.array(z.string()).optional(),
+	controlIds: z.array(z.string()).optional(),
+	entityId: z.string().optional(),
 });
 
 export type CreatePolicySchema = z.infer<typeof createPolicySchema>;
@@ -340,4 +333,21 @@ export const addCommentSchema = z.object({
 		}),
 	entityId: z.string().min(1, "Entity ID is required"),
 	entityType: z.nativeEnum(CommentEntityType),
+});
+
+export const createContextEntrySchema = z.object({
+	question: z.string().min(1, "Question is required"),
+	answer: z.string().min(1, "Answer is required"),
+	tags: z.string().optional(), // comma separated
+});
+
+export const updateContextEntrySchema = z.object({
+	id: z.string().min(1, "ID is required"),
+	question: z.string().min(1, "Question is required"),
+	answer: z.string().min(1, "Answer is required"),
+	tags: z.string().optional(),
+});
+
+export const deleteContextEntrySchema = z.object({
+	id: z.string().min(1, "ID is required"),
 });

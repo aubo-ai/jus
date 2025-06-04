@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { cn } from "@comp/ui/cn";
 import { format } from "date-fns";
+import { ScrollArea } from "@comp/ui/scroll-area";
 
 type LogActionType =
 	| "create"
@@ -121,10 +122,10 @@ const LogItem = ({ log }: { log: AuditLogWithRelations }) => {
 	const actionType = logData.action || "update";
 
 	return (
-		<Card className="overflow-hidden transition-all hover:shadow-md">
-			<CardContent className="p-4">
+		<Card className="border-0 border-none">
+			<CardContent>
 				<div className="flex items-start gap-4">
-					<Avatar className="h-10 w-10 border">
+					<Avatar className="h-10 w-10">
 						<AvatarImage
 							src={userInfo.avatarUrl || ""}
 							alt={userInfo.name || "User"}
@@ -216,43 +217,43 @@ const LogItem = ({ log }: { log: AuditLogWithRelations }) => {
 		</Card>
 	);
 };
-
 export const RecentAuditLogs = ({
 	logs,
 }: { logs: AuditLogWithRelations[] }) => {
 	return (
-		<Card className="overflow-hidden border shadow-sm">
-			<CardHeader className="bg-muted/30 pb-3">
+		<Card className="overflow-hidden">
+			<CardHeader>
 				<div className="flex items-center justify-between">
-					<CardTitle className="text-base font-semibold">
+					<CardTitle className="text-md">
 						Recent Activity
 					</CardTitle>
-					<Badge variant="outline" className="rounded-full">
-						{logs.length} {logs.length === 1 ? "entry" : "entries"}
-					</Badge>
 				</div>
 			</CardHeader>
 
 			<CardContent className="p-0">
-				{logs.length > 0 ? (
-					<div className="divide-y">
-						{logs.map((log) => (
-							<LogItem key={log.id} log={log} />
-						))}
-					</div>
-				) : (
-					<div className="flex flex-col items-center justify-center p-6 text-center">
-						<ActivityIcon className="mb-2 h-8 w-8 text-muted-foreground" />
-						<p className="text-sm font-medium">
-							No recent activity
-						</p>
-						<p className="text-xs text-muted-foreground">
-							Activity will appear here when changes are made to
-							this policy
-						</p>
-					</div>
-				)}
+				<ScrollArea>
+					{logs.length > 0 ? (
+						<div className="max-h-[300px]">
+							<div className="divide-y space-y-4">
+								{logs.map((log) => (
+									<LogItem key={log.id} log={log} />
+								))}
+							</div>
+						</div>
+					) : (
+						<div className="flex flex-col items-center justify-center p-6 text-center">
+							<ActivityIcon className="mb-2 h-8 w-8 text-muted-foreground" />
+							<p className="text-sm font-medium">
+								No recent activity
+							</p>
+							<p className="text-xs text-muted-foreground">
+								Activity will appear here when changes are made to
+								this policy
+							</p>
+						</div>
+					)}
+				</ScrollArea>
 			</CardContent>
-		</Card>
+		</Card >
 	);
 };

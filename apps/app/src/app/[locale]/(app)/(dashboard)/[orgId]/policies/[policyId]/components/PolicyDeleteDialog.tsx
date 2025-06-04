@@ -69,7 +69,7 @@ export function PolicyDeleteDialog({
 
 	return (
 		<Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-			<DialogContent className="sm:max-w-[425px]">
+			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>Delete Policy</DialogTitle>
 					<DialogDescription>

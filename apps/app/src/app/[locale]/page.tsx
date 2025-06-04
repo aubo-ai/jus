@@ -33,5 +33,5 @@ export default async function RootPage() {
 		return redirect("/setup");
 	}
 
-	return redirect(`/${orgId}/implementation`);
+	return redirect(`/${orgId}/frameworks`);
 }

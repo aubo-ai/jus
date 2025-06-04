@@ -4,7 +4,7 @@ import { useI18n } from "@/locales/client";
 import type { Member, Risk, User } from "@comp/db/types";
 import { Alert, AlertDescription, AlertTitle } from "@comp/ui/alert";
 import { Button } from "@comp/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@comp/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@comp/ui/card";
 import { Icons } from "@comp/ui/icons";
 import { PencilIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
@@ -22,41 +22,33 @@ export function RiskOverview({
 	const [open, setOpen] = useQueryState("risk-overview-sheet");
 
 	return (
-		<div className="space-y-4">
-			<Alert>
-				<Icons.Risk className="h-4 w-4" />
-				<AlertTitle>
-					<div className="flex items-center justify-between gap-2">
-						{risk.title}
+
+
+		<Card>
+			<CardHeader>
+				<div className="flex flex-col gap-2">
+					<div className="flex items-center justify-between">
+						<CardTitle>
+							{risk.title}
+						</CardTitle>
 						<Button
 							size="icon"
 							variant="ghost"
-							className="p-0 m-0 size-auto"
+							className="p-0 m-0 size-auto hover:bg-transparent"
 							onClick={() => setOpen("true")}
 						>
 							<PencilIcon className="h-3 w-3" />
 						</Button>
 					</div>
-				</AlertTitle>
-				<AlertDescription className="mt-4">
-					{risk.description}
-				</AlertDescription>
-			</Alert>
-
-			<Card>
-				<CardHeader>
-					<CardTitle>
-						<div className="flex items-center justify-between gap-2">
-							{t("risk.dashboard.overview")}
-						</div>
-					</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<UpdateRiskOverview risk={risk} assignees={assignees} />
-				</CardContent>
-			</Card>
-
+					<CardDescription>
+						{risk.description}
+					</CardDescription>
+				</div>
+			</CardHeader>
+			<CardContent>
+				<UpdateRiskOverview risk={risk} assignees={assignees} />
+			</CardContent>
 			<RiskOverviewSheet risk={risk} />
-		</div>
+		</Card>
 	);
 }

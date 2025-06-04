@@ -2,7 +2,7 @@
 
 import type { Attachment, Member, Task, User } from "@comp/db/types";
 import { useMemo, useState } from "react";
-import { CommentWithAuthor } from "../../../components/comments/Comments";
+import { CommentWithAuthor } from "../../../../../../../../components/comments/Comments";
 import { updateTask } from "../../actions/updateTask";
 import { TaskDeleteDialog } from "./TaskDeleteDialog";
 import { TaskMainContent } from "./TaskMainContent";

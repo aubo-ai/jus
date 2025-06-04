@@ -3,7 +3,11 @@
 	"version": "1.0.0",
 	"private": true,
 	"sideEffects": false,
-	"files": ["tailwind.config.ts", "postcss.config.js", "globals.css"],
+	"files": [
+		"tailwind.config.ts",
+		"postcss.config.js",
+		"globals.css"
+	],
 	"scripts": {
 		"clean": "rm -rf .turbo node_modules",
 		"lint": "biome check .",
@@ -89,7 +93,8 @@
 		"./prosemirror": "./src/prosemirror.css",
 		"./editor.css": "./src/editor.css",
 		"./chart-tooltip": "./src/components/chart-tooltip.tsx",
-		"./date-picker": "./src/components/date-picker.tsx"
+		"./date-picker": "./src/components/date-picker.tsx",
+		"./select-pills": "./src/components/select-pills.tsx"
 	},
 	"dependencies": {
 		"@mui/icons-material": "^6.1.6",

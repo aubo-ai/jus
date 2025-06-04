@@ -31,8 +31,8 @@ export function getControlColumns(): ColumnDef<ControlWithRelations>[] {
 			},
 			enableColumnFilter: true,
 			filterFn: (row, id, value) => {
-				return value.length === 0 
-					? true 
+				return value.length === 0
+					? true
 					: String(row.getValue(id))
 						.toLowerCase()
 						.includes(String(value).toLowerCase());
@@ -56,40 +56,6 @@ export function getControlColumns(): ColumnDef<ControlWithRelations>[] {
 				variant: "text",
 			},
 			enableSorting: false,
-		},
-		{
-			id: "mappedRequirements",
-			accessorKey: "requirementsMapped",
-			header: ({ column }) => (
-				<DataTableColumnHeader
-					column={column}
-					title="Linked Requirements"
-				/>
-			),
-			cell: ({ row }) => {
-				const control = row.original;
-
-				return (
-					<div className="flex flex-wrap gap-1">
-						{control.requirementsMapped.length > 0 ? (
-							control.requirementsMapped.map((req) => {
-								const frameworkName = req.frameworkInstance.framework.name;
-								return (
-									<Badge
-										key={req.id}
-										variant="secondary"
-										className="text-xs"
-									>
-										{req.requirement.name}
-									</Badge>
-								);
-							})
-						) : (
-							<span className="text-muted-foreground">None</span>
-						)}
-					</div>
-				);
-			},
 		},
 	];
 }

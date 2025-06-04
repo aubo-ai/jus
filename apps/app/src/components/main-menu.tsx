@@ -53,23 +53,12 @@ export function MainMenu({
 	//userIsAdmin,
 	organizationId,
 	isCollapsed = false,
-	completedOnboarding,
 	onItemClick,
 }: Props) {
 	const t = useI18n();
 	const pathname = usePathname();
-	const session = authClient.useSession();
 
 	const items: MenuItem[] = [
-		{
-			id: "implementation",
-			path: "/:organizationId/implementation",
-			name: t("sidebar.implementation"),
-			disabled: false,
-			icon: FlagIcon,
-			protected: false,
-			hidden: completedOnboarding,
-		},
 		{
 			id: "frameworks",
 			path: "/:organizationId/frameworks",
@@ -345,6 +334,5 @@ type Props = {
 	organizationId: string;
 	//userIsAdmin: boolean;
 	isCollapsed?: boolean;
-	completedOnboarding: boolean;
 	onItemClick?: () => void;
 };

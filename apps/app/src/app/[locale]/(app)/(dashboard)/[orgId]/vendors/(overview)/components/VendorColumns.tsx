@@ -32,6 +32,9 @@ export const columns: ColumnDef<VendorRow>[] = [
 			placeholder: "Search for vendor name...",
 			variant: "text",
 		},
+		size: 250,
+		minSize: 200,
+		maxSize: 300,
 		enableColumnFilter: true,
 	},
 	{
@@ -56,9 +59,20 @@ export const columns: ColumnDef<VendorRow>[] = [
 			return <DataTableColumnHeader column={column} title="Category" />;
 		},
 		cell: ({ row }) => {
+			const categoryMap: Record<string, string> = {
+				cloud: "Cloud",
+				infrastructure: "Infrastructure",
+				software_as_a_service: "SaaS",
+				finance: "Finance",
+				marketing: "Marketing",
+				sales: "Sales",
+				hr: "HR",
+				other: "Other"
+			};
+
 			return (
-				<Badge variant="marketing" className="uppercase w-fit">
-					{row.original.category}
+				<Badge variant="marketing" className="w-fit">
+					{categoryMap[row.original.category] || row.original.category}
 				</Badge>
 			);
 		},

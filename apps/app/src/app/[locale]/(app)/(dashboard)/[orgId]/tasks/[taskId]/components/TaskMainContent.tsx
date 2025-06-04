@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { updateTask } from "../../actions/updateTask";
 import { TaskBody } from "./TaskBody";
-import { CommentForm } from "../../../components/comments/CommentForm";
-import { CommentList } from "../../../components/comments/CommentList";
-import { CommentWithAuthor } from "../../../components/comments/Comments";
+import { CommentForm } from "../../../../../../../../components/comments/CommentForm";
+import { CommentList } from "../../../../../../../../components/comments/CommentList";
+import { CommentWithAuthor } from "../../../../../../../../components/comments/Comments";
 
 interface TaskMainContentProps {
 	task: Task & { fileUrls?: string[] };

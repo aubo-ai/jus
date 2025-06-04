@@ -1,3 +1,4 @@
+import { cache } from "react";
 import PageWithBreadcrumb from "@/components/pages/PageWithBreadcrumb";
 import { getI18n } from "@/locales/server";
 import { auth } from "@/utils/auth";
@@ -37,8 +38,6 @@ export default async function DashboardPage() {
 		}
 	});
 
-	console.log(frameworksWithControls);
-
 	return (
 		<PageWithBreadcrumb
 			breadcrumbs={[{ label: "Frameworks", current: true }]}
@@ -52,7 +51,7 @@ export default async function DashboardPage() {
 	);
 }
 
-const getControlTasks = async () => {
+const getControlTasks = cache(async () => {
 	const session = await auth.api.getSession({
 		headers: await headers(),
 	});
@@ -78,4 +77,4 @@ const getControlTasks = async () => {
 	});
 
 	return tasks;
-};
+});

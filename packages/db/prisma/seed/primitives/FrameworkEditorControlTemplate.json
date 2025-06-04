@@ -924,38 +924,192 @@
     "updatedAt": "2025-05-16 06:37:15.068"
   },
   {
-    "id": "frk_ct_ley21595_001",
-    "name": "Gobierno Corporativo y Ética",
-    "description": "Establecimiento de políticas de gobierno corporativo y código de ética para prevenir delitos económicos",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_ct_683f318e767647a9309edbe9",
+    "name": "Test Control",
+    "description": "Control Description",
+    "createdAt": "2025-06-03 17:31:57.526",
+    "updatedAt": "2025-06-03 17:31:57.526"
   },
   {
-    "id": "frk_ct_ley21595_002",
-    "name": "Canal de Denuncias",
-    "description": "Implementación de un canal de denuncias anónimo y confidencial para reportar irregularidades",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_ct_683f3b6cfc5f200113d2972f",
+    "name": "S Acceptable Use",
+    "description": "Establish an Acceptable Use Policy for Information and Assets",
+    "createdAt": "2025-06-03 18:14:04.317",
+    "updatedAt": "2025-06-03 18:14:04.317"
   },
   {
-    "id": "frk_ct_ley21595_003",
-    "name": "Evaluación de Riesgos de Delitos",
-    "description": "Proceso sistemático para identificar y evaluar riesgos de comisión de delitos económicos",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_ct_683f4036b541126388e2989a",
+    "name": "S Security Governance Roles",
+    "description": "Define Security Roles and Responsibilities",
+    "createdAt": "2025-06-03 18:34:29.668",
+    "updatedAt": "2025-06-03 18:34:29.668"
   },
   {
-    "id": "frk_ct_ley21595_004",
-    "name": "Capacitación y Comunicación",
-    "description": "Programa de capacitación y comunicación sobre prevención de delitos económicos",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_ct_683f3ecd42e62fde624c59c1",
+    "name": "S Policy Compliance",
+    "description": "Ensure Compliance with Security Policies and Standards",
+    "createdAt": "2025-06-03 18:28:29.154",
+    "updatedAt": "2025-06-03 18:34:29.907"
   },
   {
-    "id": "frk_ct_ley21595_005",
-    "name": "Monitoreo y Auditoría",
-    "description": "Sistema de monitoreo continuo y auditorías periódicas del modelo de prevención",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_ct_683f41e775f4ca03d8f6bae2",
+    "name": "S Management Security Accountability",
+    "description": "Ensure Management Addresses Security Responsibilities",
+    "createdAt": "2025-06-03 18:41:43.467",
+    "updatedAt": "2025-06-03 18:44:34.060"
+  },
+  {
+    "id": "frk_ct_683f42c71eea99f22f9df060",
+    "name": "S Asset Inventory",
+    "description": "Maintain an Inventory of Information Assets",
+    "createdAt": "2025-06-03 18:45:27.396",
+    "updatedAt": "2025-06-03 18:51:13.986"
+  },
+  {
+    "id": "frk_ct_683f43a65de3b6044e63220f",
+    "name": "S Personnel Security",
+    "description": "Screen onboard offboard securely",
+    "createdAt": "2025-06-03 18:49:09.819",
+    "updatedAt": "2025-06-03 18:51:14.207"
+  },
+  {
+    "id": "frk_ct_683f4457b14856e700c8c25b",
+    "name": "S Disciplinary process",
+    "description": "Establish a Disciplinary Process for Security Violations",
+    "createdAt": "2025-06-03 18:52:06.698",
+    "updatedAt": "2025-06-03 18:53:00.377"
+  },
+  {
+    "id": "frk_ct_683f44c8074680be528353c1",
+    "name": "S Data Retention & Destruction",
+    "description": "Follow retention; securely dispose",
+    "createdAt": "2025-06-03 18:54:00.325",
+    "updatedAt": "2025-06-03 18:54:00.325"
+  },
+  {
+    "id": "frk_ct_683f45c5058c486f3fa5b7bc",
+    "name": "S Regulatory Liaison",
+    "description": "Maintain Contact with Authorities",
+    "createdAt": "2025-06-03 18:58:13.372",
+    "updatedAt": "2025-06-03 18:58:13.372"
+  },
+  {
+    "id": "frk_ct_683f464bec8bea67de7b9c31",
+    "name": "S Information Classification",
+    "description": "Classify Information by Sensitivity",
+    "createdAt": "2025-06-03 19:00:26.503",
+    "updatedAt": "2025-06-03 19:00:26.503"
+  },
+  {
+    "id": "frk_ct_683f46f3f181af3f93773c1d",
+    "name": "S Security Monitoring & Detection",
+    "description": "Central SIEM with alerting",
+    "createdAt": "2025-06-03 19:03:14.483",
+    "updatedAt": "2025-06-03 19:03:14.483"
+  },
+  {
+    "id": "frk_ct_683f47cc2faa426603d6bee8",
+    "name": "S Security Incident Management",
+    "description": "Establish an Incident Management Policy and Procedures",
+    "createdAt": "2025-06-03 19:06:52.138",
+    "updatedAt": "2025-06-03 19:06:52.138"
+  },
+  {
+    "id": "frk_ct_683f484fc7b5506ab97c26af",
+    "name": "S Risk Management",
+    "description": "Maintain a Risk Management Program",
+    "createdAt": "2025-06-03 19:09:02.849",
+    "updatedAt": "2025-06-03 19:09:02.849"
+  },
+  {
+    "id": "frk_ct_683f48ee9534e1e0a088e922",
+    "name": "S Supplier Security",
+    "description": "Ensure Security in Supplier Relationships",
+    "createdAt": "2025-06-03 19:11:41.449",
+    "updatedAt": "2025-06-03 19:11:41.449"
+  },
+  {
+    "id": "frk_ct_683f4a410cf5bf6d40bf3583",
+    "name": "S Access Rights",
+    "description": "Manage User Access Rights Lifecycle",
+    "createdAt": "2025-06-03 19:17:20.504",
+    "updatedAt": "2025-06-03 19:17:20.504"
+  },
+  {
+    "id": "frk_ct_683f4ae4acbd63d0e558a6f5",
+    "name": "S Credential Management",
+    "description": "Protect Authentication Information",
+    "createdAt": "2025-06-03 19:20:04.055",
+    "updatedAt": "2025-06-03 19:20:04.055"
+  },
+  {
+    "id": "frk_ct_683f4b7614d209f8b6ffd477",
+    "name": "S Resource Capacity Management",
+    "description": "Perform Capacity Management for Resources",
+    "createdAt": "2025-06-03 19:22:30.199",
+    "updatedAt": "2025-06-03 19:22:30.199"
+  },
+  {
+    "id": "frk_ct_683f4c30e2d3f1117fa58e13",
+    "name": "S Change management",
+    "description": "Apply Change Management for Information Systems",
+    "createdAt": "2025-06-03 19:25:36.373",
+    "updatedAt": "2025-06-03 19:25:36.373"
+  },
+  {
+    "id": "frk_ct_683f4c9db20e7cf4a303af1f",
+    "name": "S Compliance Register",
+    "description": "Maintain compliance register exceptions",
+    "createdAt": "2025-06-03 19:27:24.623",
+    "updatedAt": "2025-06-03 19:27:24.623"
+  },
+  {
+    "id": "frk_ct_683f4cf6afd7a19be2d4432c",
+    "name": "S Configuration management",
+    "description": "Implement Secure Configuration Management",
+    "createdAt": "2025-06-03 19:28:54.395",
+    "updatedAt": "2025-06-03 19:28:54.395"
+  },
+  {
+    "id": "frk_ct_683f4d7360a876b972aba39a",
+    "name": "S Vulnerability Disclosure",
+    "description": "Public CVD channel; triage",
+    "createdAt": "2025-06-03 19:30:59.173",
+    "updatedAt": "2025-06-03 19:30:59.173"
+  },
+  {
+    "id": "frk_ct_683f4dd564057a97ae323c9f",
+    "name": "S Disaster Recovery Planning",
+    "description": "Test DR; meet RTO/RPO",
+    "createdAt": "2025-06-03 19:32:37.325",
+    "updatedAt": "2025-06-03 19:32:37.325"
+  },
+  {
+    "id": "frk_ct_683f4ef6c6a5481a377be413",
+    "name": "S Standard Operating Procedures (SOPs)",
+    "description": "Document Operational Procedures",
+    "createdAt": "2025-06-03 19:37:26.001",
+    "updatedAt": "2025-06-03 19:37:26.001"
+  },
+  {
+    "id": "frk_ct_683f4f59dea367ca96145e14",
+    "name": "S Independent ISMS Review",
+    "description": "Conduct Independent Review of the ISMS",
+    "createdAt": "2025-06-03 19:39:04.628",
+    "updatedAt": "2025-06-03 19:39:04.628"
+  },
+  {
+    "id": "frk_ct_683f50556124040dc15d62cb",
+    "name": "S Continuity-Time Security",
+    "description": "Maintain Security During Disruptions",
+    "createdAt": "2025-06-03 19:43:16.530",
+    "updatedAt": "2025-06-03 19:43:16.530"
+  },
+  {
+    "id": "frk_ct_683f50aae46f5e4e096e6bb3",
+    "name": "S Secure SDLC Integration",
+    "description": "Integrate Information Security into Project Management",
+    "createdAt": "2025-06-03 19:44:41.732",
+    "updatedAt": "2025-06-03 19:44:41.732"
   }
 ]

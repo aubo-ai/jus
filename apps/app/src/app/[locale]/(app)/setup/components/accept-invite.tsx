@@ -22,7 +22,7 @@ export function AcceptInvite({
 		const session = await authClient.getSession();
 
 		router.push(
-			`/${session.data?.session.activeOrganizationId}/implementation`,
+			`/${session.data?.session.activeOrganizationId}/frameworks`,
 		);
 	};
 

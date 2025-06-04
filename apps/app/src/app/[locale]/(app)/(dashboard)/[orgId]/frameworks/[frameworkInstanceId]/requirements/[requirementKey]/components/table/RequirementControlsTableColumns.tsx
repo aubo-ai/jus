@@ -1,6 +1,6 @@
 "use client";
 
-import { isPolicyCompleted } from "@/app/[locale]/(app)/(dashboard)/[orgId]/lib/utils/control-compliance";
+import { isPolicyCompleted } from "@/lib/control-compliance";
 import { StatusIndicator } from "@/components/status-indicator";
 import { useI18n } from "@/locales/client";
 import type { Control, Policy } from "@comp/db/types";
@@ -55,7 +55,7 @@ export function RequirementControlsTableColumns({
 			cell: ({ row }) => {
 				const controlData = row.original;
 				const policies = controlData.policies || [];
-				
+
 				const status = getControlStatus(policies, tasks, controlData.id);
 
 				const totalPolicies = policies.length;
@@ -76,7 +76,7 @@ export function RequirementControlsTableColumns({
 										{Math.round(
 											(completedPolicies /
 												totalPolicies) *
-												100,
+											100,
 										) || 0}
 										%
 									</p>

@@ -2,8 +2,12 @@
 
 import { useI18n } from "@/locales/client";
 import type { Member, User, Vendor } from "@comp/db/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@comp/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@comp/ui/card";
 import { UpdateSecondaryFieldsForm } from "./update-secondary-fields-form";
+import { UpdateTitleAndDescriptionSheet } from "../title-and-description/update-title-and-description-sheet";
+import { Button } from "@comp/ui/button";
+import { useQueryState } from "nuqs";
+import { PencilIcon } from "lucide-react";
 
 export function SecondaryFields({
 	vendor,
@@ -12,17 +16,30 @@ export function SecondaryFields({
 	vendor: Vendor & { assignee: { user: User | null } | null };
 	assignees: (Member & { user: User })[];
 }) {
-	const t = useI18n();
+	const [_, setOpen] = useQueryState("vendor-overview-sheet");
 
 	return (
 		<div className="space-y-4">
 			<Card>
 				<CardHeader>
-					<CardTitle>
-						<div className="flex items-center justify-between gap-2">
-							{t("risk.dashboard.overview")}
+					<div className="flex flex-col gap-2">
+						<div className="flex items-center justify-between">
+							<CardTitle>
+								{vendor.name}
+							</CardTitle>
+							<Button
+								size="icon"
+								variant="ghost"
+								className="p-0 m-0 size-auto hover:bg-transparent"
+								onClick={() => setOpen("true")}
+							>
+								<PencilIcon className="h-3 w-3" />
+							</Button>
 						</div>
-					</CardTitle>
+						<CardDescription>
+							{vendor.description}
+						</CardDescription>
+					</div>
 				</CardHeader>
 				<CardContent>
 					<UpdateSecondaryFieldsForm
@@ -31,6 +48,7 @@ export function SecondaryFields({
 					/>
 				</CardContent>
 			</Card>
+			<UpdateTitleAndDescriptionSheet vendor={vendor} />
 		</div>
 	);
 }

@@ -11,7 +11,7 @@ import type {
 	RequirementMap,
 	Task,
 } from "@comp/db/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@comp/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@comp/ui/card";
 import { Button } from "@comp/ui/button";
 import {
 	DropdownMenu,
@@ -83,48 +83,43 @@ export function SingleControl({
 		<div className="space-y-6">
 			<Card>
 				<CardHeader>
-					<CardTitle className="flex items-center justify-between">
-						<div>
-							<span className="text-sm text-muted-foreground">
-								{t("frameworks.controls.title")}
-							</span>
-							<h1 className="text-2xl font-semibold">
+					<CardTitle>
+						<div className="flex items-center justify-between gap-2">
+							<div className="flex items-center gap-2">
 								{control.name}
-							</h1>
-						</div>
-						<div className="flex items-center gap-2">
-							<StatusIndicator status={progressStatus} />
-							<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
-								<DropdownMenuTrigger asChild>
-									<Button
-										size="icon"
-										variant="ghost"
-										className="p-2 m-0 size-auto"
-									>
-										<MoreVertical className="h-4 w-4" />
-									</Button>
-								</DropdownMenuTrigger>
-								<DropdownMenuContent align="end">
-									<DropdownMenuItem
-										onClick={() => {
-											setDropdownOpen(false);
-											setDeleteDialogOpen(true);
-										}}
-										className="text-destructive focus:text-destructive"
-									>
-										<Trash2 className="h-4 w-4 mr-2" />
-										Delete
-									</DropdownMenuItem>
-								</DropdownMenuContent>
-							</DropdownMenu>
+							</div>
+							<div className="flex items-center gap-2">
+								<StatusIndicator status={progressStatus} />
+								<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+									<DropdownMenuTrigger asChild>
+										<Button
+											size="icon"
+											variant="ghost"
+											className="p-2 m-0 size-auto"
+										>
+											<MoreVertical className="h-4 w-4" />
+										</Button>
+									</DropdownMenuTrigger>
+									<DropdownMenuContent align="end">
+										<DropdownMenuItem
+											onClick={() => {
+												setDropdownOpen(false);
+												setDeleteDialogOpen(true);
+											}}
+											className="text-destructive focus:text-destructive"
+										>
+											<Trash2 className="h-4 w-4 mr-2" />
+											Delete
+										</DropdownMenuItem>
+									</DropdownMenuContent>
+								</DropdownMenu>
+							</div>
 						</div>
 					</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<p className="text-sm text-muted-foreground">
+					<CardDescription>
 						{control.description}
-					</p>
-				</CardContent>
+					</CardDescription>
+				</CardHeader>
 			</Card>
 			<RequirementsTable
 				requirements={control.requirementsMapped}
@@ -147,6 +142,6 @@ export function SingleControl({
 				onClose={() => setDeleteDialogOpen(false)}
 				control={control}
 			/>
-		</div>
+		</div >
 	);
 }

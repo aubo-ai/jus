@@ -1,6 +1,6 @@
 "use server";
 
-import type { researchVendor } from "@/jobs/tasks/scrape/research";
+import { researchVendor } from "@/jobs/tasks/scrape/research";
 import { tasks } from "@trigger.dev/sdk/v3";
 import { z } from "zod";
 import { authActionClient } from "./safe-action";

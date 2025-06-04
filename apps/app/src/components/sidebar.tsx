@@ -1,4 +1,4 @@
-import { getOnboardingForCurrentOrganization } from "@/data/getOnboarding";
+
 import { getOrganizations } from "@/data/getOrganizations";
 import type { Organization, FrameworkEditorFramework } from "@comp/db/types";
 import { cookies } from "next/headers";
@@ -10,10 +10,10 @@ import { db } from "@comp/db";
 
 export async function Sidebar({
 	organization,
-}: { organization: Organization | null }) {
+	collapsed = false,
+}: { organization: Organization | null, collapsed?: boolean }) {
 	const cookieStore = await cookies();
-	const isCollapsed = cookieStore.get("sidebar-collapsed")?.value === "true";
-	const { completedAll } = await getOnboardingForCurrentOrganization();
+	const isCollapsed = collapsed || cookieStore.get("sidebar-collapsed")?.value === "true";
 	const { organizations } = await getOrganizations();
 	const frameworks = await db.frameworkEditorFramework.findMany({
 		select: {
@@ -44,7 +44,6 @@ export async function Sidebar({
 					<MainMenu
 						organizationId={organization?.id ?? ""}
 						isCollapsed={isCollapsed}
-						completedOnboarding={completedAll}
 					/>
 				</div>
 			</div>

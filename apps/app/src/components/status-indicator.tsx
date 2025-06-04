@@ -119,7 +119,7 @@ export function StatusIndicator({
 	const label = getStatusTranslation(status, t);
 
 	return (
-		<div className={cn("flex items-center gap-2", className)}>
+		<div className={cn("flex items-center text-sm gap-2", className)}>
 			<div
 				className={cn("size-2.5")}
 				style={{ backgroundColor: color }}

@@ -68,8 +68,7 @@ export function SecondaryMenu({
 		>
 			<ul
 				className={cn(
-					"scrollbar-hide flex overflow-auto py-2 text-sm border-b border-border",
-					isChild ? "space-x-3" : "space-x-6",
+					"scrollbar-hide flex overflow-auto py-2  text-sm border-b border-border flex-wrap gap-x-6 gap-y-4",
 				)}
 			>
 				{showBackButton && (
@@ -89,7 +88,7 @@ export function SecondaryMenu({
 					const itemContent = (
 						<span
 							className={cn(
-								"hover:bg-secondary p-2 border-b-2 font-medium rounded-t-sm",
+								"hover:bg-secondary p-2 border-b-2 font-medium rounded-t-sm break-words text-center mb-1",
 								isActiveLink(
 									item.path,
 									item.activeOverrideIdPrefix,
