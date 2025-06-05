@@ -1,5 +1,5 @@
-const DOCUSEAL_API_URL = "https://contratos.jus.cl/api";
-const DOCUSEAL_API_TOKEN = "RCRhkaeQtdZ4vFxmxmGS79FpfBf7j3CwTfjJwBk8eAV";
+const DOCUSEAL_API_URL = process.env.DOCUSEAL_API_URL || "https://contratos.jus.cl/api";
+const DOCUSEAL_API_TOKEN = process.env.DOCUSEAL_API_TOKEN;
 
 interface DocuSealTemplate {
 	id: number;
@@ -43,10 +43,17 @@ interface DocuSealSubmission {
 class DocuSealClient {
 	private headers = {
 		Accept: "application/json",
-		"X-Auth-Token": DOCUSEAL_API_TOKEN,
+		"X-Auth-Token": DOCUSEAL_API_TOKEN || "",
 	};
 
+	private validateConfig() {
+		if (!DOCUSEAL_API_TOKEN) {
+			throw new Error("DOCUSEAL_API_TOKEN environment variable is not set");
+		}
+	}
+
 	async getTemplates(): Promise<DocuSealTemplate[]> {
+		this.validateConfig();
 		try {
 			const response = await fetch(`${DOCUSEAL_API_URL}/templates`, {
 				headers: this.headers,
@@ -64,6 +71,7 @@ class DocuSealClient {
 	}
 
 	async getSubmissions(): Promise<DocuSealSubmission[]> {
+		this.validateConfig();
 		try {
 			const response = await fetch(`${DOCUSEAL_API_URL}/submissions`, {
 				headers: this.headers,
