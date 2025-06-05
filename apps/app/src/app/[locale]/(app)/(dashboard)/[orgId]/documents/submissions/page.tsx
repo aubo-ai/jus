@@ -10,7 +10,7 @@ import { docusealClient } from "@/lib/docuseal/client";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@comp/ui/table";
 import { Badge } from "@comp/ui/badge";
 import { FileText, Mail, Eye, CheckCircle, Clock } from "lucide-react";
-import { format } from "date-fns";
+import { formatDate } from "@/utils/format";
 
 export default async function DocumentSubmissions({
 	params,
@@ -60,7 +60,7 @@ async function SubmissionsList() {
 							<div className="flex items-center justify-between">
 								<CardTitle className="text-base">{submission.template.name}</CardTitle>
 								<span className="text-sm text-muted-foreground">
-									{format(new Date(submission.created_at), "MMM d, yyyy")}
+									{formatDate(submission.created_at)}
 								</span>
 							</div>
 						</CardHeader>
@@ -88,7 +88,7 @@ async function SubmissionsList() {
 												{submitter.sent_at ? (
 													<div className="flex items-center gap-1">
 														<Mail className="h-3 w-3" />
-														{format(new Date(submitter.sent_at), "MMM d")}
+														{formatDate(submitter.sent_at)}
 													</div>
 												) : (
 													"—"
@@ -98,7 +98,7 @@ async function SubmissionsList() {
 												{submitter.opened_at ? (
 													<div className="flex items-center gap-1">
 														<Eye className="h-3 w-3" />
-														{format(new Date(submitter.opened_at), "MMM d")}
+														{formatDate(submitter.opened_at)}
 													</div>
 												) : (
 													"—"
@@ -108,7 +108,7 @@ async function SubmissionsList() {
 												{submitter.completed_at ? (
 													<div className="flex items-center gap-1">
 														<CheckCircle className="h-3 w-3 text-green-600" />
-														{format(new Date(submitter.completed_at), "MMM d")}
+														{formatDate(submitter.completed_at)}
 													</div>
 												) : (
 													"—"

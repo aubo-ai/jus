@@ -9,7 +9,7 @@ import { Skeleton } from "@comp/ui/skeleton";
 import { docusealClient } from "@/lib/docuseal/client";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@comp/ui/table";
 import { FileText } from "lucide-react";
-import { format } from "date-fns";
+import { formatDate } from "@/utils/format";
 
 export default async function DocumentTemplates({
 	params,
@@ -67,8 +67,8 @@ async function TemplatesList() {
 						<TableRow key={template.id}>
 							<TableCell className="font-medium">{template.name}</TableCell>
 							<TableCell>{template.folder_name || "-"}</TableCell>
-							<TableCell>{format(new Date(template.created_at), "MMM d, yyyy")}</TableCell>
-							<TableCell>{format(new Date(template.updated_at), "MMM d, yyyy")}</TableCell>
+							<TableCell>{formatDate(template.created_at)}</TableCell>
+							<TableCell>{formatDate(template.updated_at)}</TableCell>
 							<TableCell>
 								{template.archived_at ? (
 									<span className="text-muted-foreground">{t("documents.templates.table.archived")}</span>
