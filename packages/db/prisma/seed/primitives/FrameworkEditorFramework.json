@@ -1,51 +1,12 @@
 [
   {
-    "id": "frk_681ebae2f29f0ab08eb802ec",
-    "name": "SOC 2 v2",
-    "description": "SOC 2",
-    "version": "1.0.0",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
-  },
-  {
     "id": "frk_681ecc34e85064efdbb76993",
     "name": "ISO 27001",
     "description": "ISO 27001",
     "version": "2022",
     "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
-  },
-  {
-    "id": "frk_681ef1952907deb7cb85896d",
-    "name": "GDPR",
-    "description": "GDPR",
-    "version": "1.0.0",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
-  },
-  {
-    "id": "frk_681ef4bb8eeb2b60d2d9d187",
-    "name": "PCI DSS",
-    "description": "PCI DSS",
-    "version": "4.0.1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
-  },
-  {
-    "id": "frk_681fdd150f59a1560a66c89a",
-    "name": "HIPPA",
-    "description": "Health Insurance Portability and Accountability Act\r\n\r\nCurrently sufficient for a pure HIPAA Security-Rule audit.*\r\n\r\nCurrently Missing: \r\n\r\n1. Privacy requirements\r\n2. Breach-Notification requirements\r\n3. Soon-to-be-mandatory NPRM items. ",
-    "version": "2025",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
-  },
-  {
-    "id": "frk_6820090a1653380dd386c5eb",
-    "name": "NIST CSF",
-    "description": "National Institute of Standards and Technology Cybersecurity Framework",
-    "version": "2.0",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": true
   },
   {
     "id": "frk_6820c8b318a6d88bf2c4586d",
@@ -53,7 +14,35 @@
     "description": "NIS 2",
     "version": "2022/2555",
     "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
+  },
+  {
+    "id": "frk_681fdd150f59a1560a66c89a",
+    "name": "HIPPA",
+    "description": "Health Insurance Portability and Accountability Act\r\n\r\nCurrently sufficient for a pure HIPAA Security-Rule audit.*\r\n\r\nCurrently Missing: \r\n\r\n1. Privacy requirements\r\n2. Breach-Notification requirements\r\n3. Soon-to-be-mandatory NPRM items. ",
+    "version": "2025",
+    "createdAt": "2025-05-14 19:20:44.920",
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
+  },
+  {
+    "id": "frk_681ef1952907deb7cb85896d",
+    "name": "GDPR",
+    "description": "GDPR",
+    "version": "1.0.0",
+    "createdAt": "2025-05-14 19:20:44.920",
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
+  },
+  {
+    "id": "frk_6820090a1653380dd386c5eb",
+    "name": "NIST CSF",
+    "description": "National Institute of Standards and Technology Cybersecurity Framework",
+    "version": "2.0",
+    "createdAt": "2025-05-14 19:20:44.920",
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
   },
   {
     "id": "frk_682734f304cbbfdb3a9d4f44",
@@ -61,14 +50,52 @@
     "description": "SOC 2 is a framework for assessing the security and reliability of information systems.",
     "version": "2025",
     "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
   },
   {
-    "id": "frk_ley21595_001",
-    "name": "Ley 21595",
-    "description": "Ley sobre Delitos Económicos - Compliance y prevención de delitos en personas jurídicas",
-    "version": "2023",
+    "id": "frk_681ef4bb8eeb2b60d2d9d187",
+    "name": "PCI DSS",
+    "description": "PCI DSS",
+    "version": "4.0.1",
     "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "updatedAt": "2025-05-14 19:20:44.920",
+    "visible": false
+  },
+  {
+    "id": "frk_681ebae2f29f0ab08eb802ec",
+    "name": "SOC 2",
+    "description": "SOC 2",
+    "version": "1.0.0",
+    "createdAt": "2025-05-14 19:20:44.920",
+    "updatedAt": "2025-05-19 21:42:04.147",
+    "visible": true
+  },
+  {
+    "id": "frk_683f3102f9ae801df35d47b4",
+    "name": "Test",
+    "description": "Test",
+    "version": "1.0.0",
+    "createdAt": "2025-06-03 17:29:37.982",
+    "updatedAt": "2025-06-03 17:30:09.651",
+    "visible": false
+  },
+  {
+    "id": "frk_683f31582b71fc8d9253ad89",
+    "name": "Test2",
+    "description": "Test2",
+    "version": "1.0.0",
+    "createdAt": "2025-06-03 17:31:04.290",
+    "updatedAt": "2025-06-03 17:31:07.399",
+    "visible": false
+  },
+  {
+    "id": "frk_683f377429b8408d1c85f9bd",
+    "name": "SOC 2 A",
+    "description": "Accorp",
+    "version": "1.0.0",
+    "createdAt": "2025-06-03 17:57:07.496",
+    "updatedAt": "2025-06-03 17:57:14.945",
+    "visible": false
   }
 ]

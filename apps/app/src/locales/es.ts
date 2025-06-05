@@ -16,6 +16,7 @@ import { user_menu } from "./layout/user-menu-es";
 
 // Feature translations
 import { controls } from "./features/controls-es";
+import { documents } from "./features/documents-es";
 import { frameworks } from "./features/frameworks-es";
 import { overview } from "./features/overview-es";
 import { people } from "./features/people-es";
@@ -55,6 +56,7 @@ export const translations = {
 
 	// Features
 	controls,
+	documents,
 	frameworks,
 	overview,
 	people,

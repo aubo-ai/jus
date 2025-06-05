@@ -71,7 +71,6 @@ export function DataTableToolbar<TData>({
 			</div>
 			<div className="flex items-center gap-2">
 				{children}
-				{/* <DataTableViewOptions table={table} /> */}
 				{sheet && (
 					<Button
 						variant="default"

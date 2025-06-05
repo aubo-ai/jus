@@ -9,12 +9,14 @@ export interface LogoSpinnerProps extends React.SVGProps<SVGSVGElement> {
 	size?: number;
 	className?: string;
 	raceColor?: string;
+	isDisabled?: boolean;
 }
 
 export const LogoSpinner = ({
 	size = 40,
 	className,
 	raceColor = "#00DC73",
+	isDisabled = false,
 	...props
 }: LogoSpinnerProps) => {
 	const pathRef = useRef<SVGPathElement>(null);
@@ -39,7 +41,7 @@ export const LogoSpinner = ({
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 				className={cn("", className)}
-				animate={{ scale: [1, 1.1, 1] }}
+				{...(isDisabled ? { opacity: 0.5 } : { animate: { scale: [1, 1.1, 1] } })}
 				transition={{
 					duration: 2,
 					repeat: Number.POSITIVE_INFINITY,
@@ -53,32 +55,34 @@ export const LogoSpinner = ({
 					fill="currentColor"
 				/>
 
-				{/* Racing line - uses the raceColor prop */}
-				<motion.path
-					ref={pathRef}
-					d={cShapePath}
-					fill="none"
-					stroke={raceColor}
-					strokeWidth={2.5}
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					initial={{ pathLength: 0, pathOffset: 0 }}
-					animate={{
-						pathLength: 1,
-						pathOffset: [0, 1],
-					}}
-					transition={{
-						pathLength: {
-							duration: 0.01,
-							delay: 0.5,
-						},
-						pathOffset: {
-							duration: 2.5,
-							repeat: Number.POSITIVE_INFINITY,
-							ease: "linear",
-						},
-					}}
-				/>
+				{!isDisabled && (
+					// Racing line - uses the raceColor prop
+					<motion.path
+						ref={pathRef as any}
+						d={cShapePath}
+						fill="none"
+						stroke={raceColor}
+						strokeWidth={2.5}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						initial={{ pathLength: 0, pathOffset: 0 }}
+						animate={{
+							pathLength: 1,
+							pathOffset: [0, 1],
+						}}
+						transition={{
+							pathLength: {
+								duration: 0.01,
+								delay: 0.5,
+							},
+							pathOffset: {
+								duration: 2.5,
+								repeat: Number.POSITIVE_INFINITY,
+								ease: "linear",
+							},
+						}}
+					/>
+				)}
 			</motion.svg>
 		</div>
 	);

@@ -27,6 +27,7 @@ const config: NextConfig = {
 		serverActions: {
 			bodySizeLimit: "15mb",
 		},
+		nodeMiddleware: true,
 		authInterrupts: true,
 	},
 	async rewrites() {

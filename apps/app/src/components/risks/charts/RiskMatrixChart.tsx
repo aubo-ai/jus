@@ -14,8 +14,6 @@ import { PencilIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
 import type React from "react";
 
-// --- Constants (Copied from vendor chart) ---
-
 const LIKELIHOOD_SCORES: Record<Likelihood, number> = {
 	very_unlikely: 1,
 	unlikely: 2,
@@ -30,13 +28,6 @@ const IMPACT_SCORES: Record<Impact, number> = {
 	moderate: 3,
 	major: 4,
 	severe: 5,
-};
-
-const RISK_COLORS = {
-	low: "#00DC73", // green
-	medium: "#FFD700", // amber
-	high: "#FFA500", // orange
-	critical: "#FF0000", // red
 };
 
 const VISUAL_LIKELIHOOD_ORDER: Likelihood[] = [
@@ -54,16 +45,35 @@ const VISUAL_IMPACT_ORDER: Impact[] = [
 	Impact.severe,
 ];
 
-const Y_AXIS_LABELS = [
-	"Very Likely",
-	"Likely",
-	"Possible",
-	"Unlikely",
-	"Very Unlikely",
-];
-const X_AXIS_LABELS = ["Insignificant", "Minor", "Moderate", "Major", "Severe"];
+interface RiskCell {
+	probability: string;
+	impact: string;
+	level: "very-low" | "low" | "medium" | "high" | "very-high";
+	value?: number;
+}
 
-// --- Component Props ---
+const getRiskColor = (level: string) => {
+	switch (level) {
+		case "very-low":
+			return "bg-emerald-500/20 border-emerald-500/30 hover:bg-emerald-500/30";
+		case "low":
+			return "bg-green-500/20 border-green-500/30 hover:bg-green-500/30";
+		case "medium":
+			return "bg-yellow-500/20 border-yellow-500/30 hover:bg-yellow-500/30";
+		case "high":
+			return "bg-orange-500/20 border-orange-500/30 hover:bg-orange-500/30";
+		case "very-high":
+			return "bg-red-500/20 border-red-500/30 hover:bg-red-500/30";
+		default:
+			return "bg-slate-500/20 border-slate-500/30";
+	}
+};
+
+const probabilityLevels = ["Very Likely", "Likely", "Possible", "Unlikely", "Very Unlikely"];
+const probabilityNumbers = ["5", "4", "3", "2", "1"];
+const probabilityLabels = ["Very Likely (5)", "Likely (4)", "Possible (3)", "Unlikely (2)", "Very Unlikely (1)"];
+const impactLevels = ["Insignificant", "Minor", "Moderate", "Major", "Severe"];
+const impactNumbers = ["1", "2", "3", "4", "5"];
 
 interface RiskMatrixChartProps {
 	title: string;
@@ -71,11 +81,9 @@ interface RiskMatrixChartProps {
 	activeLikelihood: Likelihood;
 	activeImpact: Impact;
 	sheetQueryParam: string;
-	EditSheetComponent: React.ComponentType<any>; // Accept any sheet component
-	editSheetProps: Record<string, any>; // Pass props dynamically
+	EditSheetComponent: React.ComponentType<any>;
+	editSheetProps: Record<string, any>;
 }
-
-// --- Reusable Chart Component ---
 
 export function RiskMatrixChart({
 	title,
@@ -89,144 +97,106 @@ export function RiskMatrixChart({
 	const t = useI18n();
 	const [open, setOpen] = useQueryState(sheetQueryParam);
 
-	// Calculate risk score (using active values from props)
-	const riskScore =
-		LIKELIHOOD_SCORES[activeLikelihood] * IMPACT_SCORES[activeImpact];
+	const activeProbability = probabilityLevels[VISUAL_LIKELIHOOD_ORDER.indexOf(activeLikelihood)];
+	const activeImpactLevel = impactLevels[VISUAL_IMPACT_ORDER.indexOf(activeImpact)];
 
-	// Determine risk level
-	let riskLevel = "low";
-	if (riskScore > 16) riskLevel = "critical";
-	else if (riskScore > 9) riskLevel = "high";
-	else if (riskScore > 4) riskLevel = "medium";
+	// Create risk data
+	const riskData: RiskCell[] = probabilityLevels.flatMap((probability) =>
+		impactLevels.map((impact) => {
+			const likelihoodScore = LIKELIHOOD_SCORES[VISUAL_LIKELIHOOD_ORDER[probabilityLevels.indexOf(probability)]];
+			const impactScore = IMPACT_SCORES[VISUAL_IMPACT_ORDER[impactLevels.indexOf(impact)]];
+			const score = likelihoodScore * impactScore;
+
+			let level: RiskCell["level"] = "very-low";
+			if (score > 16) level = "very-high";
+			else if (score > 9) level = "high";
+			else if (score > 4) level = "medium";
+			else if (score > 1) level = "low";
+
+			return {
+				probability,
+				impact,
+				level,
+				value: probability === activeProbability && impact === activeImpactLevel ? 1 : undefined,
+			};
+		})
+	);
 
 	return (
 		<>
 			<Card>
-				<CardHeader>
-					<div className="flex justify-between items-center">
-						<div className="w-full">
-							<CardTitle>
-								<div className="flex items-center justify-between gap-2">
-									{title}
-									<Button
-										onClick={() => setOpen("true")}
-										size="icon"
-										variant="ghost"
-										className="p-0 m-0 size-auto"
-									>
-										<PencilIcon className="h-4 w-4" />
-									</Button>
-								</div>
-							</CardTitle>
-							<CardDescription className="text-xs">
-								{description}
-							</CardDescription>
+				<CardHeader className="pb-4">
+					<div className="flex items-center justify-between">
+						<div>
+							<CardTitle>{title}</CardTitle>
+							<CardDescription>{description}</CardDescription>
 						</div>
+						<Button
+							onClick={() => setOpen("true")}
+							size="icon"
+							variant="ghost"
+							className="p-0 m-0 size-auto"
+						>
+							<PencilIcon className="h-4 w-4" />
+						</Button>
 					</div>
 				</CardHeader>
 				<CardContent>
-					<div
-						className="grid w-full max-h-[350px] aspect-[1.5/1] gap-1
-                       grid-cols-1 grid-rows-1
-                       md:grid-cols-[auto_auto_1fr] md:grid-rows-[1fr_auto_auto]"
-					>
-						{/* Y-axis Title */}
-						<div className="hidden xl:grid place-items-center xl:row-start-1 xl:col-start-1">
-							<span className="-rotate-90 font-semibold text-xs text-muted-foreground whitespace-nowrap">
-								{t("risk.metrics.probability")}
-							</span>
-						</div>
+					<div className="relative">
+						<div>
+							<div className="grid grid-cols-6 gap-px rounded-lg">
+								<div className="h-12" />
+								{impactLevels.map((impact, index) => (
+									<div key={impact} className="flex flex-col items-center justify-center">
+										<span className="text-xs text-center leading-tight">{impact}</span>
+									</div>
+								))}
 
-						{/* Y-axis Labels */}
-						<div className="hidden xl:grid grid-rows-5 xl:row-start-1 xl:col-start-2 pr-2">
-							{Y_AXIS_LABELS.map((label, i) => (
-								<div
-									key={`y-label-${i}`}
-									className="grid place-items-center justify-end text-xs"
-								>
-									{label}
-								</div>
-							))}
-						</div>
-
-						{/* 5x5 Matrix Grid */}
-						<div className="grid grid-cols-5 grid-rows-5 border-l border-b row-start-1 col-start-1 md:col-start-3 md:row-start-1">
-							{VISUAL_LIKELIHOOD_ORDER.map(
-								(rowLikelihood, rowIndex) =>
-									VISUAL_IMPACT_ORDER.map(
-										(colImpact, colIndex) => {
-											const likelihoodScore =
-												LIKELIHOOD_SCORES[
-												rowLikelihood
-												];
-											const impactScore =
-												IMPACT_SCORES[colImpact];
-											const cellScore =
-												likelihoodScore * impactScore;
-
-											let cellColor = RISK_COLORS.low;
-											if (cellScore > 16)
-												cellColor =
-													RISK_COLORS.critical;
-											else if (cellScore > 9)
-												cellColor = RISK_COLORS.high;
-											else if (cellScore > 4)
-												cellColor = RISK_COLORS.medium;
-
-											const isActive =
-												rowLikelihood ===
-												activeLikelihood &&
-												colImpact === activeImpact;
-
+								{/* Data rows */}
+								{probabilityLevels.map((probability, rowIdx) => (
+									<div key={probability} className="contents">
+										<div
+											className="flex flex-col items-center justify-center"
+											title={probabilityLabels[rowIdx]}
+										>
+											<span className="text-xs">{probabilityNumbers[rowIdx]}</span>
+										</div>
+										{impactLevels.map((impact, colIdx) => {
+											const cell = riskData.find(
+												(item) => item.probability === probability && item.impact === impact
+											);
+											// Determine if this cell is a corner for rounding
+											let rounding = "";
+											if (rowIdx === 0 && colIdx === 0) rounding = "rounded-tl-lg";
+											if (rowIdx === 0 && colIdx === impactLevels.length - 1) rounding = "rounded-tr-lg";
+											if (rowIdx === probabilityLevels.length - 1 && colIdx === 0) rounding = "rounded-bl-lg";
+											if (rowIdx === probabilityLevels.length - 1 && colIdx === impactLevels.length - 1) rounding = "rounded-br-lg";
 											return (
 												<div
-													key={`cell-${rowIndex}-${colIndex}`}
-													className="border-t border-r relative"
-													style={{
-														backgroundColor: `${cellColor}25`,
-													}} // Cell background based on risk level
+													key={`${probability}-${impact}`}
+													className={`
+														relative h-12 border transition-all duration-200 cursor-pointer
+														${getRiskColor(cell?.level || "very-low")}
+														flex items-center justify-center
+														${rounding}
+													`}
 												>
-													{isActive && (
-														<div
-															className="absolute inset-0 z-10 border" // Highlight active cell
-															style={{
-																backgroundColor:
-																	cellColor,
-																borderColor:
-																	cellColor,
-																opacity: 0.9,
-															}}
-														/>
-													)}
+													{cell?.value && <div className="w-3 h-3 bg-white rounded-full shadow-lg" />}
 												</div>
 											);
-										},
-									),
-							)}
-						</div>
+										})}
+									</div>
+								))}
+							</div>
 
-						{/* X-axis Labels */}
-						<div className="hidden md:grid grid-cols-5 md:col-start-3 md:row-start-2 pt-1">
-							{X_AXIS_LABELS.map((label, i) => (
-								<div
-									key={`x-label-${i}`}
-									className="grid place-items-center text-xs"
-								>
-									{label}
-								</div>
-							))}
-						</div>
-
-						{/* X-axis Title */}
-						<div className="hidden md:grid place-items-center md:col-start-3 md:row-start-3 pt-1">
-							<span className="font-semibold text-xs text-muted-foreground">
-								{t("risk.metrics.impact")}
-							</span>
+							{/* X-axis label */}
+							<div className="flex justify-center mt-4">
+								<span className="text-xs">{t("risk.metrics.impact")}</span>
+							</div>
 						</div>
 					</div>
 				</CardContent>
 			</Card>
-			{/* Render the passed Edit Sheet component with its specific props */}
 			<EditSheetComponent {...editSheetProps} />
 		</>
 	);

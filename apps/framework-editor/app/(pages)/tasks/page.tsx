@@ -12,7 +12,14 @@ export default async function Page() {
 
 	const tasks = await db.frameworkEditorTaskTemplate.findMany({
 		// Optionally include related data if needed
-		// include: { controlTemplates: true }
+		include: { 
+			controlTemplates: {
+				select: {
+					id: true,
+					name: true,
+				}
+			}
+		} 
 	});
 
 	return <TasksClientPage initialTasks={tasks} />;

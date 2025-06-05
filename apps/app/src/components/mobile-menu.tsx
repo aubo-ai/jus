@@ -12,14 +12,12 @@ import type { Organization as DbOrganization, FrameworkEditorFramework } from "@
 interface MobileMenuProps {
 	organizations: AuthOrganization[];
 	isCollapsed?: boolean;
-	completedOnboarding: boolean;
 	organizationId: string;
 	frameworks: Pick<FrameworkEditorFramework, "id" | "name" | "description" | "version" | "visible">[];
 }
 
 export function MobileMenu({
 	organizationId,
-	completedOnboarding,
 	organizations,
 	frameworks
 }: MobileMenuProps) {
@@ -64,7 +62,6 @@ export function MobileMenu({
 					/>
 					<MainMenu
 						organizationId={organizationId}
-						completedOnboarding={completedOnboarding}
 						onItemClick={handleCloseSheet}
 					/>
 				</div>

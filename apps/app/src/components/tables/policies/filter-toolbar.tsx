@@ -13,9 +13,8 @@ import {
 	SelectValue,
 } from "@comp/ui/select";
 import { Skeleton } from "@comp/ui/skeleton";
+import { User } from "better-auth";
 import { Plus, Search, X } from "lucide-react";
-import type { User } from "next-auth";
-import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useQueryState } from "nuqs";
 import { useTransition } from "react";

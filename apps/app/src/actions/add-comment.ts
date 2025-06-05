@@ -66,9 +66,7 @@ export const addCommentAction = authActionClient
 				"";
 			path = path.replace(/\/[a-z]{2}\//, "/");
 
-			if (path) {
-				revalidatePath(path);
-			}
+			revalidatePath(path);
 
 			return { success: true, data: comment };
 		} catch (error) {

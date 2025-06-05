@@ -8,6 +8,7 @@ model Vendor {
   inherentImpact      Impact         @default(insignificant)
   residualProbability Likelihood     @default(very_unlikely)
   residualImpact      Impact         @default(insignificant)
+  website             String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

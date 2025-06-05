@@ -9,14 +9,16 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@react-email/components": "^0.0.41",
+		"@react-email/render": "^1.1.2",
 		"@t3-oss/env-nextjs": "^0.12.0",
 		"better-auth": "^1.2.4",
-		"next": "^15.2.0",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
+		"next": "^15.4.0-canary.62",
+		"react-email": "^4.0.15",
 		"react-otp-input": "^3.1.1"
 	},
 	"devDependencies": {
+		"next": "15.4.0-canary.62",
 		"@comp/ui": "workspace:*",
 		"@comp/db": "workspace:*",
 		"@types/node": "^22.13.2",
@@ -25,5 +27,9 @@
 		"postcss": "^8.5.2",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.8.3"
+	},
+	"peerDependencies": {
+		"react": "^19",
+		"react-dom": "^19"
 	}
 }

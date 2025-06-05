@@ -4,7 +4,6 @@ import { db } from "@comp/db";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import type { FrameworkEditorFramework } from "@comp/db/types";
 
 export default async function NoAccess() {
 	const session = await auth.api.getSession({
@@ -46,7 +45,7 @@ export default async function NoAccess() {
 			<h1 className="text-2xl font-bold">Access Denied</h1>
 			<div className="flex flex-col text-center">
 				<p>
-					<b>Employees</b> don't have access to app.trycomp.ai, did
+					<b>Employees</b> don&apos;t have access to app.trycomp.ai, did
 					you mean to go to{" "}
 					<Link
 						href="https://portal.trycomp.ai"

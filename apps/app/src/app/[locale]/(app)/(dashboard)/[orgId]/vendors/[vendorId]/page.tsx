@@ -16,7 +16,7 @@ import { TitleAndDescription } from "./components/title-and-description/title-an
 import {
 	Comments,
 	CommentWithAuthor,
-} from "../../components/comments/Comments";
+} from "../../../../../../../components/comments/Comments";
 import {
 	Attachment,
 	AttachmentEntityType,
@@ -45,7 +45,6 @@ export default async function VendorPage({ params }: PageProps) {
 			]}
 		>
 			<div className="flex flex-col gap-4">
-				<TitleAndDescription vendor={vendor} />
 				<SecondaryFields vendor={vendor} assignees={assignees} />
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 					<VendorInherentRiskChart vendor={vendor} />

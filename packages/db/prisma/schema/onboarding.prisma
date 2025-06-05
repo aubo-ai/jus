@@ -1,15 +1,15 @@
 model Onboarding {
-    organizationId String       @id
-    organization   Organization @relation(fields: [organizationId], references: [id])
-
-    policies              Boolean @default(false)
-    employees             Boolean @default(false)
-    vendors               Boolean @default(false)
-    integrations          Boolean @default(false)
-    risk                  Boolean @default(false)
-    team                  Boolean @default(false)
-    tasks                 Boolean @default(false)
-    callBooked            Boolean @default(false)
+    organizationId        String       @id
+    organization          Organization @relation(fields: [organizationId], references: [id])
+    completed             Boolean      @default(true)
+    policies              Boolean      @default(false)
+    employees             Boolean      @default(false)
+    vendors               Boolean      @default(false)
+    integrations          Boolean      @default(false)
+    risk                  Boolean      @default(false)
+    team                  Boolean      @default(false)
+    tasks                 Boolean      @default(false)
+    callBooked            Boolean      @default(false)
     companyBookingDetails Json?
     companyDetails        Json?
 

@@ -5985,6 +5985,15 @@
     "updatedAt": "2025-05-14 19:20:44.920"
   },
   {
+    "id": "frk_rq_683f316954a237019ca60e26",
+    "frameworkId": "frk_683f3102f9ae801df35d47b4",
+    "name": "CC1",
+    "description": "CC1 SOC 2",
+    "identifier": "CC1",
+    "createdAt": "2025-06-03 17:31:21.379",
+    "updatedAt": "2025-06-03 17:31:21.379"
+  },
+  {
     "id": "frk_rq_6820cd0c33c6d0b792d7ad32",
     "frameworkId": "frk_6820c8b318a6d88bf2c4586d",
     "name": "3.5.1 Incident handling\t",
@@ -6786,6 +6795,15 @@
     "updatedAt": "2025-05-14 19:20:44.920"
   },
   {
+    "id": "frk_rq_683f3179d3ba9393821ad7a4",
+    "frameworkId": "frk_683f31582b71fc8d9253ad89",
+    "name": "A.1",
+    "description": "A1 ISO 27001",
+    "identifier": "A1",
+    "createdAt": "2025-06-03 17:31:36.578",
+    "updatedAt": "2025-06-03 17:31:36.578"
+  },
+  {
     "id": "frk_rq_6820cf48a00e4423470a1c44",
     "frameworkId": "frk_6820c8b318a6d88bf2c4586d",
     "name": "11.2.2 HR security, access control & asset management\t",
@@ -7254,48 +7272,354 @@
     "updatedAt": "2025-05-14 19:20:44.920"
   },
   {
-    "id": "frk_rq_ley21595_001",
-    "frameworkId": "frk_ley21595_001",
-    "name": "Modelo de Prevención",
-    "description": "Implementación y operación de un modelo de prevención de delitos",
-    "identifier": "MP-1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_rq_683f3a1f08cc55cacec20739",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 1: The entity demonstrates a commitment to integrity and ethical values.",
+    "description": "The organization has established procedures for staff to acknowledge applicable company policies periodically.",
+    "identifier": "CC1.1",
+    "createdAt": "2025-06-03 18:08:31.192",
+    "updatedAt": "2025-06-03 18:08:31.192"
   },
   {
-    "id": "frk_rq_ley21595_002",
-    "frameworkId": "frk_ley21595_001",
-    "name": "Encargado de Prevención",
-    "description": "Designación de un encargado de prevención de delitos con autonomía",
-    "identifier": "EP-1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_rq_683f53a49fb685fdef51bd84",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 1: The entity demonstrates a commitment to integrity and ethical values.",
+    "description": "The organization has established procedures for new staff to acknowledge applicable company policies as a part of their onboarding.",
+    "identifier": "CC1.1",
+    "createdAt": "2025-06-03 19:57:23.993",
+    "updatedAt": "2025-06-03 19:57:23.993"
   },
   {
-    "id": "frk_rq_ley21595_003",
-    "frameworkId": "frk_ley21595_001",
-    "name": "Identificación de Riesgos",
-    "description": "Identificación de actividades y procesos con riesgo de comisión de delitos",
-    "identifier": "IR-1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_rq_683f5632b0fc59f9e7a6f017",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 1: The entity demonstrates a commitment to integrity and ethical values.",
+    "description": "The organization has a documented policy to define behavioral standards and acceptable business conduct.",
+    "identifier": "CC1.1",
+    "createdAt": "2025-06-03 20:08:17.543",
+    "updatedAt": "2025-06-03 20:08:17.543"
   },
   {
-    "id": "frk_rq_ley21595_004",
-    "frameworkId": "frk_ley21595_001",
-    "name": "Protocolos y Procedimientos",
-    "description": "Establecimiento de protocolos y procedimientos para prevenir la comisión de delitos",
-    "identifier": "PP-1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_rq_683f5668c8c29ade4f138409",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 1: The entity demonstrates a commitment to integrity and ethical values.",
+    "description": "The organization outlines and documents cybersecurity responsibilities for all personnel.",
+    "identifier": "CC1.1",
+    "createdAt": "2025-06-03 20:09:11.733",
+    "updatedAt": "2025-06-03 20:09:11.733"
   },
   {
-    "id": "frk_rq_ley21595_005",
-    "frameworkId": "frk_ley21595_001",
-    "name": "Supervisión y Certificación",
-    "description": "Supervisión y certificación del modelo de prevención de delitos",
-    "identifier": "SC-1",
-    "createdAt": "2025-05-14 19:20:44.920",
-    "updatedAt": "2025-05-14 19:20:44.920"
+    "id": "frk_rq_683f56e9693dbfc43020b888",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+    "description": "The organization's Senior Management reviews and approves all company policies annually.",
+    "identifier": "CC1.2",
+    "createdAt": "2025-06-03 20:11:20.589",
+    "updatedAt": "2025-06-03 20:11:20.589"
+  },
+  {
+    "id": "frk_rq_683f5739ffea5f4b8a4a38a2",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+    "description": "The organization's Senior Management reviews and approves the Organizational Chart for all employees annually.",
+    "identifier": "CC1.2",
+    "createdAt": "2025-06-03 20:12:41.270",
+    "updatedAt": "2025-06-03 20:12:41.270"
+  },
+  {
+    "id": "frk_rq_683f57a2f0ff68d354188fc8",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+    "description": "The organization's Senior Management reviews and approves the \"Risk Assessment Report\" annually.",
+    "identifier": "CC1.2",
+    "createdAt": "2025-06-03 20:14:25.932",
+    "updatedAt": "2025-06-03 20:14:25.932"
+  },
+  {
+    "id": "frk_rq_683f57ee29510dff7d67bae5",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+    "description": "The organization's Senior Management reviews and approves the state of the Information Security program  including policies, standards, and procedures, at planned intervals or if significant changes occur to ensure their continuing suitability, adequacy, and effectiveness.",
+    "identifier": "CC1.2",
+    "createdAt": "2025-06-03 20:15:42.391",
+    "updatedAt": "2025-06-03 20:15:42.391"
+  },
+  {
+    "id": "frk_rq_683f5826155074066b20f359",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.",
+    "description": "The organization's Senior Management reviews and approves the \"Vendor Risk Assessment Report\" annually.",
+    "identifier": "CC1.2",
+    "createdAt": "2025-06-03 20:16:38.069",
+    "updatedAt": "2025-06-03 20:16:38.069"
+  },
+  {
+    "id": "frk_rq_683f5903d0298dd0f3c9a6f0",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization has set up mechanisms to assign and manage asset ownership responsibilities and establish a common understanding of asset protection requirements.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:20:18.964",
+    "updatedAt": "2025-06-03 20:20:18.964"
+  },
+  {
+    "id": "frk_rq_683f592cf0799dd8d8581d1f",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization has established procedures to communicate with staff about their roles and responsibilities.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:20:59.894",
+    "updatedAt": "2025-06-03 20:20:59.894"
+  },
+  {
+    "id": "frk_rq_683f596636e1bd804233af0b",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization maintains an organizational structure to define authorities, facilitate information flow and establish responsibilities.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:21:58.310",
+    "updatedAt": "2025-06-03 20:21:58.310"
+  },
+  {
+    "id": "frk_rq_683f598fc18a528adfcdd561",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "and implementing the internal control environment.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:22:39.029",
+    "updatedAt": "2025-06-03 20:22:39.029"
+  },
+  {
+    "id": "frk_rq_683f59f677b228d92e8dbd87",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization's Senior Management assigns the role of Information Security Officer who is delegated to centrally manage, coordinate, develop, implement, and maintain an enterprise-wide cybersecurity and privacy program.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:24:22.005",
+    "updatedAt": "2025-06-03 20:24:22.005"
+  },
+  {
+    "id": "frk_rq_683f5a1d694266a1bc584c0d",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization's Senior Management reviews and approves the state of the Information Security program  including policies, standards, and procedures, at planned intervals or if significant changes occur to ensure their continuing suitability, adequacy, and effectiveness.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:25:01.101",
+    "updatedAt": "2025-06-03 20:25:01.101"
+  },
+  {
+    "id": "frk_rq_683f5a3e34bd9d03b30b5abd",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.",
+    "description": "The organization appoints a People Operations Officer to develop and drive all personnel-related security strategies.",
+    "identifier": "CC1.3",
+    "createdAt": "2025-06-03 20:25:34.151",
+    "updatedAt": "2025-06-03 20:25:34.151"
+  },
+  {
+    "id": "frk_rq_683f5a7da5c95341a76298e5",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 4: The entity demonstrates a commitment to attract, develop, and retain competent individuals in alignment with objectives.",
+    "description": "The organization has established procedures to perform security risk screening of individuals before authorizing access.",
+    "identifier": "CC1.4",
+    "createdAt": "2025-06-03 20:26:36.583",
+    "updatedAt": "2025-06-03 20:26:36.583"
+  },
+  {
+    "id": "frk_rq_683f5aa3f69b481d3b6940fe",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 4: The entity demonstrates a commitment to attract, develop, and retain competent individuals in alignment with objectives.",
+    "description": "The organization has procedures to ensure that all security-related positions are staffed by qualified individuals who have the necessary skill set.",
+    "identifier": "CC1.4",
+    "createdAt": "2025-06-03 20:27:14.762",
+    "updatedAt": "2025-06-03 20:27:14.762"
+  },
+  {
+    "id": "frk_rq_683f5acf45eb7c83462ba655",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 5: The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+    "description": "The organization has established procedures for staff to acknowledge applicable company policies periodically.",
+    "identifier": "CC1.5",
+    "createdAt": "2025-06-03 20:27:58.856",
+    "updatedAt": "2025-06-03 20:27:58.856"
+  },
+  {
+    "id": "frk_rq_683f5b403fbef4ebd6a8c99d",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 5: The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+    "description": "The organization provides information security and privacy  training to staff that is relevant to their job function.",
+    "identifier": "CC1.5",
+    "createdAt": "2025-06-03 20:29:52.158",
+    "updatedAt": "2025-06-03 20:29:52.158"
+  },
+  {
+    "id": "frk_rq_683f5b63affa0d376c386095",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 5: The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+    "description": "The organization requires that all employees in client serving, IT, Engineering, and Information Security roles are periodically evaluated regarding their job responsibilities.",
+    "identifier": "CC1.5",
+    "createdAt": "2025-06-03 20:30:26.884",
+    "updatedAt": "2025-06-03 20:30:26.884"
+  },
+  {
+    "id": "frk_rq_683f5b8241dbd32ac2c6ad2b",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 5: The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+    "description": "The organization has established procedures for new staff to complete security and privacy literacy training as a part of their onboarding.",
+    "identifier": "CC1.5",
+    "createdAt": "2025-06-03 20:30:58.109",
+    "updatedAt": "2025-06-03 20:30:58.109"
+  },
+  {
+    "id": "frk_rq_683f5ba644d4f017a7ff14d7",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 5: The entity holds individuals accountable for their internal control responsibilities in the pursuit of objectives.",
+    "description": "The organization documents, monitors, and retains individual training activities and records.",
+    "identifier": "CC1.5",
+    "createdAt": "2025-06-03 20:31:33.950",
+    "updatedAt": "2025-06-03 20:31:33.950"
+  },
+  {
+    "id": "frk_rq_683f5bf4aadd827a8cfb5b54",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 13: The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+    "description": "The organization has a documented policy outlining guidelines for the disposal and retention of information.",
+    "identifier": "CC2.1",
+    "createdAt": "2025-06-03 20:32:51.682",
+    "updatedAt": "2025-06-03 20:32:51.682"
+  },
+  {
+    "id": "frk_rq_683f5c2de17c4c845303afa7",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 13: The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+    "description": "The organization displays the most current information about its services on its website, which is accessible to its customers.",
+    "identifier": "CC2.1",
+    "createdAt": "2025-06-03 20:33:49.325",
+    "updatedAt": "2025-06-03 20:33:49.325"
+  },
+  {
+    "id": "frk_rq_683f5c4db2e8d69c54ed6a17",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 13: The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+    "description": "The organization makes all policies and procedures available to all staff members for their perusal.",
+    "identifier": "CC2.1",
+    "createdAt": "2025-06-03 20:34:20.587",
+    "updatedAt": "2025-06-03 20:34:20.587"
+  },
+  {
+    "id": "frk_rq_683f5c79f2d8475a502d481e",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 13: The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+    "description": "The organization has documented policy and procedures for physical and/or logical labeling of information via documented policy for data classification.",
+    "identifier": "CC2.1",
+    "createdAt": "2025-06-03 20:35:04.833",
+    "updatedAt": "2025-06-03 20:35:04.833"
+  },
+  {
+    "id": "frk_rq_683f5cad55f946163fa374d4",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 13: The entity obtains or generates and uses relevant, quality information to support the functioning of internal control.",
+    "description": "The organization systems generate information that is reviewed and evaluated to determine impacts on the functioning of internal controls.",
+    "identifier": "CC2.1",
+    "createdAt": "2025-06-03 20:35:56.759",
+    "updatedAt": "2025-06-03 20:35:56.759"
+  },
+  {
+    "id": "frk_rq_683f5d3bab237b17163a8a96",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization has established procedures for staff to acknowledge applicable company policies periodically.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:38:19.099",
+    "updatedAt": "2025-06-03 20:38:19.099"
+  },
+  {
+    "id": "frk_rq_683f5d83a84dab0e497cc8a6",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization has established procedures for new staff to acknowledge applicable company policies as a part of their onboarding.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:39:31.347",
+    "updatedAt": "2025-06-03 20:39:31.347"
+  },
+  {
+    "id": "frk_rq_683f5daecd5e3f57e3f2733c",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization has provided information to employees, via various Information Security Policies/procedures, on how to report failures, incidents, concerns, or other complaints related to the services or systems provided by the The organization in the event there are problems.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:40:14.186",
+    "updatedAt": "2025-06-03 20:40:14.186"
+  },
+  {
+    "id": "frk_rq_683f5dd45d0c3a5d87292db4",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization makes all policies and procedures available to all staff members for their perusal.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:40:52.254",
+    "updatedAt": "2025-06-03 20:40:52.254"
+  },
+  {
+    "id": "frk_rq_683f5e0a2a1d7ae66d82f6df",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization has a documented policy to define behavioral standards and acceptable business conduct.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:41:45.965",
+    "updatedAt": "2025-06-03 20:41:45.965"
+  },
+  {
+    "id": "frk_rq_683f5e3e316fa66736e2daf7",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization has established procedures for new staff to complete security and privacy literacy training as a part of their onboarding.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:42:38.312",
+    "updatedAt": "2025-06-03 20:42:38.312"
+  },
+  {
+    "id": "frk_rq_683f5e96f7b22acf54f4376f",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 14: The entity internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.",
+    "description": "The organization documents, monitors, and retains individual training activities and records.",
+    "identifier": "CC2.2",
+    "createdAt": "2025-06-03 20:44:05.807",
+    "updatedAt": "2025-06-03 20:44:05.807"
+  },
+  {
+    "id": "frk_rq_683f5ed1fb039b11269212c8",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 15: The entity communicates with external parties regarding matters affecting the functioning of internal control.",
+    "description": "The organization displays the most current information about its services on its website, which is accessible to its customers.",
+    "identifier": "CC2.3",
+    "createdAt": "2025-06-03 20:45:04.736",
+    "updatedAt": "2025-06-03 20:45:04.736"
+  },
+  {
+    "id": "frk_rq_683f5efbfcf289aa20945535",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 15: The entity communicates with external parties regarding matters affecting the functioning of internal control.",
+    "description": "The organization has provided information to customers on how to report failures, incidents, concerns, or other complaints related to the services or systems provided by the The organization in the event there are problems.",
+    "identifier": "CC2.3",
+    "createdAt": "2025-06-03 20:45:46.920",
+    "updatedAt": "2025-06-03 20:45:46.920"
+  },
+  {
+    "id": "frk_rq_683f5f4d18de5fee7df6f15a",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 6: The entity specifies objectives with sufficient clarity to enable the identification and assessment of risks relating to objectives.",
+    "description": "The organization performs a formal risk assessment exercise annually, as per documented guidelines and procedures, to identify threats that could impair systems' security commitments and requirements.",
+    "identifier": "CC3.1",
+    "createdAt": "2025-06-03 20:47:09.217",
+    "updatedAt": "2025-06-03 20:47:09.217"
+  },
+  {
+    "id": "frk_rq_683f5f6e645c88e762e959ee",
+    "frameworkId": "frk_683f377429b8408d1c85f9bd",
+    "name": "COSO Principle 7: The entity identifies risks to the achievement of its objectives across the entity and analyzes risks as a basis for determining how the risks should be managed.",
+    "description": "The organization has established procedures for new staff to acknowledge applicable company policies as a part of their onboarding.",
+    "identifier": "CC3.2",
+    "createdAt": "2025-06-03 20:47:41.534",
+    "updatedAt": "2025-06-03 20:47:41.534"
   }
 ]

@@ -7,5 +7,5 @@ export default async function DashboardPage({
 }) {
 	const organizationId = (await params).orgId;
 
-	return redirect(`/${organizationId}/implementation`);
+	return redirect(`/${organizationId}/frameworks`);
 }

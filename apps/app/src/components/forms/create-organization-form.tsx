@@ -17,7 +17,6 @@ import {
 	FormMessage,
 } from "@comp/ui/form";
 import { Icons } from "@comp/ui/icons";
-import { Input } from "@comp/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { Loader2 } from "lucide-react";
@@ -62,15 +61,10 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 		const randomSuffix = Math.floor(
 			100000 + Math.random() * 900000,
 		).toString();
-		const slug = `${data.name
-			.toLowerCase()
-			.trim()
-			.replace(/[^\w\s-]/g, "")
-			.replace(/[\s_-]+/g, "-")}-${randomSuffix}`;
 
 		await authClient.organization.create({
-			name: data.name,
-			slug,
+			name: "My Organization",
+			slug: `my-organization-${randomSuffix}`,
 		});
 
 		createOrganization.execute({
@@ -81,9 +75,7 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 	const form = useForm<z.infer<typeof organizationSchema>>({
 		resolver: zodResolver(organizationSchema),
 		defaultValues: {
-			name: "",
 			frameworkIds: [],
-			website: "",
 		},
 		mode: "onChange",
 	});
@@ -119,10 +111,10 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 
 				<div className="mb-8 space-y-2">
 					<h1 className="text-2xl font-semibold tracking-tight">
-						{t("onboarding.setup")}
+						Welcome to Comp AI
 					</h1>
 					<p className="text-sm text-muted-foreground">
-						{t("onboarding.description")}
+						Select the frameworks you use to get started. You can add more later.
 					</p>
 				</div>
 
@@ -132,50 +124,6 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 						className="space-y-6"
 						suppressHydrationWarning
 					>
-						<FormField
-							control={form.control}
-							name="name"
-							render={({ field }) => (
-								<FormItem className="space-y-2">
-									<FormLabel className="text-sm font-medium">
-										{t("onboarding.fields.name.label")}
-									</FormLabel>
-									<FormControl>
-										<Input
-											autoCorrect="off"
-											placeholder={t(
-												"onboarding.fields.name.placeholder",
-											)}
-											suppressHydrationWarning
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage className="text-xs" />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name="website"
-							render={({ field }) => (
-								<FormItem className="space-y-2">
-									<FormLabel className="text-sm font-medium">
-										{t("onboarding.fields.website.label")}
-									</FormLabel>
-									<FormControl>
-										<Input
-											autoCorrect="off"
-											placeholder={t(
-												"onboarding.fields.website.placeholder",
-											)}
-											suppressHydrationWarning
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage className="text-xs" />
-								</FormItem>
-							)}
-						/>
 						<FormField
 							control={form.control}
 							name="frameworkIds"
@@ -201,7 +149,7 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 																field.value.includes(
 																	framework.id,
 																) &&
-																	"border-primary bg-primary/5",
+																"border-primary bg-primary/5",
 															)}
 														>
 															<div className="flex items-start justify-between">
@@ -233,16 +181,16 @@ export function OnboardingClient({ frameworks }: OnboardingClientProps) {
 																			const newValue =
 																				checked
 																					? [
-																							...field.value,
-																							framework.id,
-																						]
+																						...field.value,
+																						framework.id,
+																					]
 																					: field.value.filter(
-																							(
-																								currentFrameworkId,
-																							) =>
-																								currentFrameworkId !==
-																								framework.id,
-																						);
+																						(
+																							currentFrameworkId,
+																						) =>
+																							currentFrameworkId !==
+																							framework.id,
+																					);
 																			field.onChange(
 																				newValue,
 																			);

@@ -1,6 +1,5 @@
 "use client";
 
-import { signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useQueryState } from "nuqs";
 import { useHotkeys } from "react-hotkeys-hook";
@@ -18,11 +17,6 @@ export function HotKeys() {
 		parse: (value) => value === "true",
 		serialize: (value) => value.toString(),
 	});
-
-	const handleSignOut = async () => {
-		await signOut();
-		router.refresh();
-	};
 
 	useHotkeys("ctrl+m", (evt) => {
 		evt.preventDefault();
@@ -52,16 +46,6 @@ export function HotKeys() {
 	useHotkeys("shift+meta+p", (evt) => {
 		evt.preventDefault();
 		router.push("/account");
-	});
-
-	useHotkeys("ctrl+meta+q", (evt) => {
-		evt.preventDefault();
-		handleSignOut();
-	});
-
-	useHotkeys("shift+meta+q", (evt) => {
-		evt.preventDefault();
-		handleSignOut();
 	});
 
 	useHotkeys("meta+k", (evt) => {

@@ -227,7 +227,7 @@ export function FileUploader(props: FileUploaderProps) {
 			>
 				{({ getRootProps, getInputProps, isDragActive }) => (
 					<div
-						{...getRootProps()}
+						{...(getRootProps() as React.HTMLProps<HTMLDivElement>)}
 						className={cn(
 							"group relative grid h-52 w-full cursor-pointer place-items-center border-2 border-dashed border-muted-foreground/25 px-5 py-2.5 text-center transition hover:bg-muted/25",
 							"ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",

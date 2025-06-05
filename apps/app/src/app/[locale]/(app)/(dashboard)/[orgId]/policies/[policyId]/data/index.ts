@@ -2,7 +2,7 @@
 
 import { auth } from "@/utils/auth";
 import { headers } from "next/headers";
-import { CommentWithAuthor } from "../../../components/comments/Comments";
+import { CommentWithAuthor } from "@/components/comments/Comments";
 import {
 	AttachmentEntityType,
 	AuditLogEntityType,

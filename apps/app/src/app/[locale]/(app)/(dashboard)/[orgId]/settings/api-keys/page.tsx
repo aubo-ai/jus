@@ -2,7 +2,7 @@ import { auth } from "@/utils/auth";
 import { headers } from "next/headers";
 import { cache } from "react";
 
-import { ApiKeysTable } from "@/components/tables/api-keys";
+import { ApiKeysTable } from "./components/table/ApiKeysTable";
 import { getI18n } from "@/locales/server";
 import { db } from "@comp/db";
 import type { Metadata } from "next";
@@ -11,18 +11,14 @@ import { setStaticParamsLocale } from "next-international/server";
 export default async function ApiKeysPage({
 	params,
 }: {
-	params: Promise<{ locale: string }>;
+	params: Promise<{ locale: string; orgId: string }>;
 }) {
 	const { locale } = await params;
 	setStaticParamsLocale(locale);
-	const t = await getI18n();
-
 	const apiKeys = await getApiKeys();
 
 	return (
-		<div className="mx-auto max-w-7xl">
-			<ApiKeysTable apiKeys={apiKeys} />
-		</div>
+		<ApiKeysTable apiKeys={apiKeys} />
 	);
 }
 

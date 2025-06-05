@@ -3,7 +3,7 @@ import { JSONContent } from "novel";
 import {
 	Comments,
 	CommentWithAuthor,
-} from "../../../components/comments/Comments";
+} from "../../../../../../../../components/comments/Comments";
 import { AuditLogWithRelations } from "../data";
 import { PolicyPageEditor } from "../editor/components/PolicyDetails";
 import { PolicyOverview } from "./PolicyOverview";

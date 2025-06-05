@@ -3,7 +3,7 @@ import { getI18n } from "@/locales/server";
 import type { Metadata } from "next";
 import { setStaticParamsLocale } from "next-international/server";
 import { JSONContent } from "novel";
-import { Comments } from "../../components/comments/Comments";
+import { Comments } from "../../../../../../../components/comments/Comments";
 import { PolicyOverview } from "./components/PolicyOverview";
 import { PolicyPageEditor } from "./editor/components/PolicyDetails";
 import {

@@ -53,7 +53,11 @@ export function FrameworkRequirements({
 				header: ({ column }) => (
 					<DataTableColumnHeader column={column} title={t("frameworks.requirements.table.name")} />
 				),
-				cell: ({ row }) => <span>{row.original.name}</span>,
+				cell: ({ row }) => (
+					<span className="capitalize line-clamp-1">
+						{row.original.name}
+					</span>
+				),
 				enableSorting: true,
 				size: 200,
 				minSize: 150,
@@ -74,7 +78,7 @@ export function FrameworkRequirements({
 					/>
 				),
 				cell: ({ row }) => (
-					<span className="block max-w-[500px]">
+					<span className="capitalize line-clamp-1">
 						{row.original.description}
 					</span>
 				),
@@ -97,10 +101,10 @@ export function FrameworkRequirements({
 						{row.original.mappedControlsCount}
 					</span>
 				),
+				size: 25,
+				minSize: 25,
+				maxSize: 25,
 				enableSorting: true,
-				size: 150,
-				minSize: 100,
-				maxSize: 200,
 				enableResizing: true,
 			},
 		],

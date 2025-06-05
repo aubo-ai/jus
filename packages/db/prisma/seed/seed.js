@@ -4,18 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("@prisma/client");
-const promises_1 = __importDefault(require("fs/promises"));
-const path_1 = __importDefault(require("path"));
+const promises_1 = __importDefault(require("node:fs/promises"));
+const node_path_1 = __importDefault(require("node:path"));
 const frameworkEditorSchemas_1 = require("./frameworkEditorSchemas");
 const prisma = new client_1.PrismaClient();
 async function seedJsonFiles(subDirectory) {
-    const directoryPath = path_1.default.join(__dirname, subDirectory);
+    const directoryPath = node_path_1.default.join(__dirname, subDirectory);
     console.log(`Starting to seed files from: ${directoryPath}`);
     const files = await promises_1.default.readdir(directoryPath);
     const jsonFiles = files.filter((file) => file.endsWith(".json"));
     for (const jsonFile of jsonFiles) {
         try {
-            const filePath = path_1.default.join(directoryPath, jsonFile);
+            const filePath = node_path_1.default.join(directoryPath, jsonFile);
             const jsonContent = await promises_1.default.readFile(filePath, "utf-8");
             const jsonData = JSON.parse(jsonContent);
             if (!Array.isArray(jsonData) || jsonData.length === 0) {
@@ -24,10 +24,12 @@ async function seedJsonFiles(subDirectory) {
             }
             if (subDirectory === "primitives") {
                 const modelNameForPrisma = jsonFile.replace(".json", "");
-                const prismaModelKey = modelNameForPrisma.charAt(0).toLowerCase() + modelNameForPrisma.slice(1);
+                const prismaModelKey = modelNameForPrisma.charAt(0).toLowerCase() +
+                    modelNameForPrisma.slice(1);
                 const zodModelKey = modelNameForPrisma;
                 const prismaAny = prisma;
-                if (!prismaAny[prismaModelKey] || typeof prismaAny[prismaModelKey].createMany !== 'function') {
+                if (!prismaAny[prismaModelKey] ||
+                    typeof prismaAny[prismaModelKey].createMany !== "function") {
                     console.warn(`Model ${prismaModelKey} not found on Prisma client or does not support createMany. Skipping ${jsonFile}.`);
                     continue;
                 }
@@ -49,12 +51,14 @@ async function seedJsonFiles(subDirectory) {
                     }
                     console.log(`Validation successful for ${jsonFile}.`);
                 }
-                const processedData = jsonData.map(item => {
+                const processedData = jsonData.map((item) => {
                     const newItem = { ...item };
-                    if (newItem.createdAt && typeof newItem.createdAt === 'string') {
+                    if (newItem.createdAt &&
+                        typeof newItem.createdAt === "string") {
                         newItem.createdAt = new Date(newItem.createdAt);
                     }
-                    if (newItem.updatedAt && typeof newItem.updatedAt === 'string') {
+                    if (newItem.updatedAt &&
+                        typeof newItem.updatedAt === "string") {
                         newItem.updatedAt = new Date(newItem.updatedAt);
                     }
                     return newItem;
@@ -78,12 +82,15 @@ async function seedJsonFiles(subDirectory) {
                     console.warn(`Could not parse model names from relation file: ${jsonFile}`);
                     continue;
                 }
-                const prismaModelAName = modelANamePascal.charAt(0).toLowerCase() + modelANamePascal.slice(1);
+                const prismaModelAName = modelANamePascal.charAt(0).toLowerCase() +
+                    modelANamePascal.slice(1);
                 // Infer relation field name on ModelA: pluralized, camelCased ModelB name
                 // e.g., if ModelB is FrameworkEditorPolicyTemplate, relation field is frameworkEditorPolicyTemplates
                 // This is a common convention, but might need adjustment based on actual schema
-                let relationFieldNameOnModelA = modelBNamePascal.charAt(0).toLowerCase() + modelBNamePascal.slice(1);
-                if (!relationFieldNameOnModelA.endsWith("s")) { // basic pluralization
+                let relationFieldNameOnModelA = modelBNamePascal.charAt(0).toLowerCase() +
+                    modelBNamePascal.slice(1);
+                if (!relationFieldNameOnModelA.endsWith("s")) {
+                    // basic pluralization
                     relationFieldNameOnModelA += "s";
                 }
                 // Special handling for 'Requirement' -> 'requirements' (already plural)
@@ -99,7 +106,8 @@ async function seedJsonFiles(subDirectory) {
                     relationFieldNameOnModelA = "taskTemplates";
                 }
                 const prismaAny = prisma;
-                if (!prismaAny[prismaModelAName] || typeof prismaAny[prismaModelAName].update !== 'function') {
+                if (!prismaAny[prismaModelAName] ||
+                    typeof prismaAny[prismaModelAName].update !== "function") {
                     console.warn(`Model ${prismaModelAName} not found on Prisma client or does not support update. Skipping ${jsonFile}.`);
                     continue;
                 }

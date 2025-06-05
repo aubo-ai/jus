@@ -14,7 +14,7 @@ import { cache } from "react";
 import {
 	Comments,
 	CommentWithAuthor,
-} from "../../components/comments/Comments";
+} from "../../../../../../../components/comments/Comments";
 
 interface PageProps {
 	searchParams: Promise<{

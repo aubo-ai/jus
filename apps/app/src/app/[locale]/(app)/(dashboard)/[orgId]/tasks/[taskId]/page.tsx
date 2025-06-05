@@ -5,7 +5,7 @@ import { CommentEntityType, AttachmentEntityType } from "@comp/db/types";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { SingleTask } from "./components/SingleTask";
-import { CommentWithAuthor } from "../../components/comments/Comments";
+import { CommentWithAuthor } from "../../../../../../../components/comments/Comments";
 
 export default async function TaskPage({
 	params,

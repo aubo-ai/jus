@@ -1,10 +1,7 @@
 import { db } from "@comp/db";
-// import PageLayout from "@/app/components/PageLayout"; // No longer needed here
-// import { DataTable } from "@/app/components/DataTable"; // No longer needed here
-// import { columns } from "./components/columns"; // No longer needed here
 import { isAuthorized } from "@/app/lib/utils";
 import { redirect } from "next/navigation";
-import { ControlsClientPage } from "./ControlsClientPage"; // Import the new Client Component
+import { ControlsClientPage } from "./ControlsClientPage";
 
 export default async function Page() {
 	const isAllowed = await isAuthorized();

@@ -1,5 +1,4 @@
 import { UserMenu } from "@/components/user-menu";
-import { getOnboardingForCurrentOrganization } from "@/data/getOnboarding";
 import { getI18n } from "@/locales/server";
 import { auth } from "@/utils/auth";
 import { buttonVariants } from "@comp/ui/button";
@@ -29,7 +28,6 @@ export async function Header() {
 		redirect("/");
 	}
 
-	const { completedAll } = await getOnboardingForCurrentOrganization();
 	const { organizations } = await getOrganizations();
 
 	const frameworks = await db.frameworkEditorFramework.findMany({
@@ -46,7 +44,6 @@ export async function Header() {
 		<header className="flex justify-between items-center bg-backgroundSoft py-4 top-0 z-10 px-4 border-b border-border/40 static">
 			<MobileMenu
 				organizationId={currentOrganizationId}
-				completedOnboarding={completedAll}
 				organizations={organizations}
 				frameworks={frameworks}
 			/>

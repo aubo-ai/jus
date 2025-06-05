@@ -49,30 +49,13 @@ export function TasksTable({ tasks, orgId, controlId }: TasksTableProps) {
 						title={"Description"}
 					/>
 				),
-				cell: ({ row }) => (
-					<span className="capitalize">
-						{row.original.description}
-					</span>
-				),
-			},
-			{
-				accessorKey: "createdAt",
-				header: ({ column }) => (
-					<DataTableColumnHeader
-						column={column}
-						title={"Created At"}
-					/>
-				),
-				cell: ({ row }) => (
-					<span>
-						{new Date(row.original.createdAt).toLocaleDateString()}
-					</span>
-				),
-				enableSorting: true,
-				sortingFn: (rowA, rowB, columnId) => {
-					const dateA = new Date(rowA.original.createdAt);
-					const dateB = new Date(rowB.original.createdAt);
-					return dateA.getTime() - dateB.getTime();
+				cell: ({ row }) => {
+					const description = row.original.description;
+					return (
+						<span className="capitalize line-clamp-1">
+							{description}
+						</span>
+					);
 				},
 			},
 			{

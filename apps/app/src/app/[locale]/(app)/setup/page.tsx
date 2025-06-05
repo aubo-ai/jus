@@ -50,7 +50,7 @@ export default async function Page() {
 			},
 		});
 
-		return redirect(`/${organization.id}/implementation`);
+		return redirect(`/${organization.id}/frameworks`);
 	}
 
 	if (hasInvite) {
