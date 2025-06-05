@@ -24,6 +24,7 @@ enum AttachmentEntityType {
     vendor
     risk
     comment
+    policy
 }
 
 enum AttachmentType {
