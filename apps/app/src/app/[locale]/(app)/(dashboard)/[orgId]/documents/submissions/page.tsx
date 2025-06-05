@@ -137,8 +137,8 @@ function StatusBadge({ status }: { status: string }) {
 	const config = {
 		pending: { label: "Pending", variant: "secondary" as const, icon: Clock },
 		sent: { label: "Sent", variant: "outline" as const, icon: Mail },
-		opened: { label: "Opened", variant: "default" as const, icon: Eye },
-		completed: { label: "Completed", variant: "success" as const, icon: CheckCircle },
+		opened: { label: "Opened", variant: "warning" as const, icon: Eye },
+		completed: { label: "Completed", variant: "default" as const, icon: CheckCircle },
 	};
 
 	const { label, variant, icon: Icon } = config[status as keyof typeof config] || config.pending;
