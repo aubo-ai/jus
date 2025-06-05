@@ -64,9 +64,9 @@ ENV NODE_OPTIONS="--dns-result-order=ipv4first"
 
 # Set dummy environment variables for build time
 ENV BETTER_AUTH_SECRET="dummy-auth-secret-for-build"
-ENV BETTER_AUTH_URL="http://localhost:3002"
+ENV BETTER_AUTH_URL="https://portal.jus.cl"
 ENV RESEND_API_KEY="dummy-resend-api-key"
-ENV NEXT_PUBLIC_BETTER_AUTH_URL="http://localhost:3002"
+ENV NEXT_PUBLIC_BETTER_AUTH_URL="https://portal.jus.cl"
 ENV DATABASE_URL="postgresql://dummy:dummy@dummy:5432/dummy"
 
 # Generate Prisma client with dummy DATABASE_URL using npx instead of bunx
