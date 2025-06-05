@@ -39,7 +39,14 @@ export const subdomainAvailabilitySchema = z.object({
 });
 
 export const uploadSchema = z.object({
-	file: z.instanceof(File),
+	file: z.any().refine((file) => {
+		// Check if we're in a browser environment
+		if (typeof File !== 'undefined') {
+			return file instanceof File;
+		}
+		// In server environment, check for basic file properties
+		return file && typeof file === 'object' && 'name' in file && 'size' in file;
+	}, "Must be a valid file"),
 	organizationId: z.string(),
 });
 

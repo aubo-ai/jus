@@ -14,6 +14,7 @@ import {
 import {
 	Blocks,
 	FlagIcon,
+	FileText,
 	FlaskConical,
 	Gauge,
 	ListCheck,
@@ -89,6 +90,14 @@ export function MainMenu({
 			name: t("sidebar.tasks"),
 			disabled: false,
 			icon: ListCheck,
+			protected: false,
+		},
+		{
+			id: "documents",
+			path: "/:organizationId/documents",
+			name: t("sidebar.documents"),
+			disabled: false,
+			icon: FileText,
 			protected: false,
 		},
 		{
