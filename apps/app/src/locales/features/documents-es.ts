@@ -48,7 +48,13 @@ export const documents = {
 			opened: "Abierto",
 			completed: "Completado",
 		},
+		filters: {
+			search: "Buscar solicitudes...",
+			all_statuses: "Todos los Estados",
+			all_templates: "Todas las Plantillas",
+		},
 		empty: "No se encontraron solicitudes",
+		no_results: "No hay solicitudes que coincidan con sus filtros",
 		error: {
 			title: "Error al cargar solicitudes",
 			description: "Por favor intente más tarde",

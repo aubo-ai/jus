@@ -48,7 +48,13 @@ export const documents = {
 			opened: "Opened",
 			completed: "Completed",
 		},
+		filters: {
+			search: "Search submissions...",
+			all_statuses: "All Statuses",
+			all_templates: "All Templates",
+		},
 		empty: "No submissions found",
+		no_results: "No submissions match your filters",
 		error: {
 			title: "Failed to load submissions",
 			description: "Please try again later",
