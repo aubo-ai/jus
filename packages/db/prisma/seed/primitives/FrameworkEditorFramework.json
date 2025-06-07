@@ -97,5 +97,13 @@
     "createdAt": "2025-06-03 17:57:07.496",
     "updatedAt": "2025-06-03 17:57:14.945",
     "visible": false
+  },
+  {
+    "id": "frk_ley21595_001",
+    "name": "Ley 21595",
+    "description": "Ley sobre Delitos Económicos - Compliance y prevención de delitos en personas jurídicas",
+    "version": "2023",
+    "createdAt": "2025-05-14 19:20:44.920",
+    "updatedAt": "2025-05-14 19:20:44.920"
   }
 ]
