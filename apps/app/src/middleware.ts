@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const config = {
 	runtime: "nodejs",
 	matcher: [
-		// Skip auth-related routes
+		// Skip auth-related routes and server actions
 		"/((?!api|_next/static|_next/image|favicon.ico|monitoring|ingest|onboarding|research).*)",
 	],
 };
@@ -19,6 +19,15 @@ const I18nMiddleware = createI18nMiddleware({
 });
 
 export async function middleware(request: NextRequest) {
+	// Skip middleware for server actions
+	const isServerAction = request.headers.get("content-type")?.includes("text/plain") ||
+		request.headers.get("next-action") ||
+		request.method === "POST" && request.headers.get("accept")?.includes("text/x-component");
+	
+	if (isServerAction) {
+		return NextResponse.next();
+	}
+
 	const session = await auth.api.getSession({
 		headers: await headers(),
 	});

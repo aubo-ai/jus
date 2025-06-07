@@ -41,6 +41,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_POSTHOG_HOST: z.string().optional(),
 		NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
 		NEXT_PUBLIC_NOVU_IDENTIFIER: z.string().optional(),
+		NEXT_PUBLIC_BETTER_AUTH_URL: z.string().optional(),
 	},
 
 	runtimeEnv: {
@@ -79,6 +80,7 @@ export const env = createEnv({
 		RESEND_AUDIENCE_ID: process.env.RESEND_AUDIENCE_ID,
 		FIRECRAWL_API_KEY: process.env.FIRECRAWL_API_KEY,
 		ZAPIER_HUBSPOT_WEBHOOK_URL: process.env.ZAPIER_HUBSPOT_WEBHOOK_URL,
+		NEXT_PUBLIC_BETTER_AUTH_URL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL,
 	},
 
 	skipValidation: !!process.env.CI || !!process.env.SKIP_ENV_VALIDATION,

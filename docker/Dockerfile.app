@@ -67,7 +67,8 @@ ENV AUTH_SECRET="dummy-auth-secret-for-build"
 ENV DATABASE_URL="postgresql://dummy:dummy@dummy:5432/dummy"
 ENV RESEND_API_KEY="dummy-resend-api-key"
 ENV REVALIDATION_SECRET="dummy-revalidation-secret"
-ENV NEXT_PUBLIC_PORTAL_URL="http://localhost:3002"
+ENV NEXT_PUBLIC_PORTAL_URL="https://app.jus.cl"
+ENV NEXT_PUBLIC_BETTER_AUTH_URL="https://app.jus.cl/api/auth"
 
 # Generate Prisma client with dummy DATABASE_URL using npx instead of bunx
 RUN cd packages/db && DATABASE_URL="postgresql://dummy:dummy@dummy:5432/dummy" npx prisma generate

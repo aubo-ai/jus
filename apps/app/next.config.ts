@@ -26,6 +26,7 @@ const config: NextConfig = {
 	experimental: {
 		serverActions: {
 			bodySizeLimit: "15mb",
+			allowedOrigins: ["https://app.jus.cl", "https://app.trycomp.ai"],
 		},
 		nodeMiddleware: true,
 		authInterrupts: true,
