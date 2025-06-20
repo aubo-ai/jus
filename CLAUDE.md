@@ -6,6 +6,15 @@
 - **ALWAYS find and fix the root cause** of issues instead of creating workarounds.
 - When debugging issues, focus on fixing the existing implementation, not replacing it
 
+# Standard Workflow
+
+1. First think on the problem, read the codebase for relevant files, and write a plan to tasks/todo.md.
+2. The plan should have a list of to-do items that you can check off as you complete them.
+3. Before you begin working, check in with me and I will verify the plan. 
+4. Then, begin working on the to-do items, marking them as complete as you go.
+5. Finally, add a review section in the @tasks/todo.md file with a summary of the changes you made and any other relevan information.
+
+
 ### Prisma Usage
 
 - NEVER use raw SQL queries ($queryRaw, $queryRawUnsafe) - always use Prisma Client methods
